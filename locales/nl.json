@@ -226,6 +226,10 @@
     }
   },
   "templates": {
+    "404": {
+      "title": "Pagina niet gevonden",
+      "subtext": "404"
+    },
     "search": {
       "no_results": "Geen resultaten gevonden voor “{{ terms }}”. Controleer de spelling of gebruik een ander woord of een andere zin.",
       "results_with_count": {
@@ -269,10 +273,6 @@
         "error_heading": "Pas het volgende aan:",
         "title": "Contactformulier"
       }
-    },
-    "404": {
-      "title": "Pagina niet gevonden",
-      "subtext": "404"
     }
   },
   "sections": {
@@ -314,7 +314,20 @@
       "duties_included_taxes_at_checkout_shipping_at_checkout_with_policy_html": "Douanerechten inbegrepen. Belastingen, kortingen en <a href=\"{{ link }}\">verzending</a> worden bij de checkout berekend.",
       "duties_included_taxes_at_checkout_shipping_at_checkout_without_policy": "Douanerechten inbegrepen. Belastingen, kortingen en verzending worden bij de checkout berekend.",
       "taxes_at_checkout_shipping_at_checkout_with_policy_html": "Belastingen, kortingen en <a href=\"{{ link }}\">verzending</a> worden bij de checkout berekend.",
-      "taxes_at_checkout_shipping_at_checkout_without_policy": "Belastingen, kortingen en verzending worden bij de checkout berekend."
+      "taxes_at_checkout_shipping_at_checkout_without_policy": "Belastingen, kortingen en verzending worden bij de checkout berekend.",
+      "discount_code": {
+        "heading": "Discount code",
+        "label": "Discount code",
+        "placeholder": "Enter code",
+        "apply": "Apply",
+        "remove": "Remove discount",
+        "removing": "Removing",
+        "applying": "Applying",
+        "success_default": "Coupon {{ code }} applied!",
+        "error_default": "Invalid discount code",
+        "empty_error": "Enter a discount code",
+        "applied_summary": "Active discounts"
+      }
     },
     "footer": {
       "payment": "Betaalmethoden"

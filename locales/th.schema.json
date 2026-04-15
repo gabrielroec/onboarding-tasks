@@ -284,6 +284,34 @@
             "label": "คอลเลกชัน",
             "info": "แสดงผลเมื่อตะกร้าสินค้าแบบเลื่อนด้านข้างว่างเปล่า"
           }
+        },
+        "discount_code": {
+          "header": "Discount code (cart)",
+          "enable": {
+            "label": "Show discount code field"
+          },
+          "heading": {
+            "label": "Heading"
+          },
+          "placeholder": {
+            "label": "Input placeholder"
+          },
+          "button": {
+            "label": "Apply button"
+          },
+          "remove": {
+            "label": "Remove button"
+          },
+          "success": {
+            "label": "Success message",
+            "info": "Use {{ code }} where the applied code should appear."
+          },
+          "error": {
+            "label": "Invalid code message"
+          },
+          "empty_error": {
+            "label": "Empty field message"
+          }
         }
       }
     },

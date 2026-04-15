@@ -322,6 +322,19 @@
       "login": {
         "title": "Have an account?",
         "paragraph_html": "<a href=\"{{ link }}\" class=\"link underlined-link\">Log in</a> to check out faster."
+      },
+      "discount_code": {
+        "heading": "Cupom de desconto",
+        "label": "Cupom de desconto",
+        "placeholder": "Digite o código",
+        "apply": "Aplicar",
+        "remove": "Remover cupom",
+        "removing": "Removendo",
+        "applying": "Aplicando",
+        "success_default": "Cupom {{ code }} aplicado!",
+        "error_default": "Cupom inválido",
+        "empty_error": "Digite um cupom",
+        "applied_summary": "Descontos ativos"
       }
     },
     "footer": {

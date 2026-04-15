@@ -3,6 +3,9 @@
 
   Usage:
   {% render 'cart-drawer' %}
+
+  Feature: Cart Discount Code
+  Description: Snippet cart-discount-code is included in the drawer footer when the cart has items and the theme setting is enabled
 {% endcomment %}
 
 {{ 'quantity-popover.css' | asset_url | stylesheet_tag }}
@@ -493,6 +496,10 @@
               >{{ cart.note }}</textarea>
             </cart-note>
           </details>
+        {%- endif -%}
+
+        {%- if settings.enable_cart_discount_code and cart != empty -%}
+          {% render 'cart-discount-code', context: 'drawer' %}
         {%- endif -%}
 
         <!-- Start blocks -->

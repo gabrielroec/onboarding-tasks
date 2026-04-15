@@ -315,6 +315,19 @@
         "title": "Tem uma conta?",
         "paragraph_html": "<a href=\"{{ link }}\" class=\"link underlined-link\">Faça login</a> para finalizar a compra com mais rapidez."
       },
+      "discount_code": {
+        "heading": "Cupom de desconto",
+        "label": "Cupom de desconto",
+        "placeholder": "Digite o código",
+        "apply": "Aplicar",
+        "remove": "Remover cupom",
+        "removing": "Removendo",
+        "applying": "Aplicando",
+        "success_default": "Cupom {{ code }} aplicado!",
+        "error_default": "Cupom inválido",
+        "empty_error": "Digite um cupom",
+        "applied_summary": "Descontos ativos"
+      },
       "estimated_total": "Total estimado",
       "new_estimated_total": "Novo total estimado",
       "duties_and_taxes_included_shipping_at_checkout_with_policy_html": "Tributos de importação e outros tributos incluídos. Descontos e <a href=\"{{ link }}\">frete</a> calculados no checkout.",

@@ -284,6 +284,34 @@
             "label": "商品系列",
             "info": "當購物車導覽匣無商品時顯示"
           }
+        },
+        "discount_code": {
+          "header": "Discount code (cart)",
+          "enable": {
+            "label": "Show discount code field"
+          },
+          "heading": {
+            "label": "Heading"
+          },
+          "placeholder": {
+            "label": "Input placeholder"
+          },
+          "button": {
+            "label": "Apply button"
+          },
+          "remove": {
+            "label": "Remove button"
+          },
+          "success": {
+            "label": "Success message",
+            "info": "Use {{ code }} where the applied code should appear."
+          },
+          "error": {
+            "label": "Invalid code message"
+          },
+          "empty_error": {
+            "label": "Empty field message"
+          }
         }
       }
     },

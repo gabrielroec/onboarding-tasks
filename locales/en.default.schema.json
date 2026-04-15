@@ -339,6 +339,34 @@
         "show_cart_note": {
           "label": "Cart note"
         },
+        "discount_code": {
+          "header": "Cupom de desconto (carrinho)",
+          "enable": {
+            "label": "Exibir campo de cupom"
+          },
+          "heading": {
+            "label": "Título"
+          },
+          "placeholder": {
+            "label": "Placeholder do campo"
+          },
+          "button": {
+            "label": "Botão aplicar"
+          },
+          "remove": {
+            "label": "Botão remover"
+          },
+          "success": {
+            "label": "Mensagem de sucesso",
+            "info": "Use {{ code }} onde o código aplicado deve aparecer."
+          },
+          "error": {
+            "label": "Mensagem de cupom inválido"
+          },
+          "empty_error": {
+            "label": "Mensagem de campo vazio"
+          }
+        },
         "cart_drawer": {
           "header": "Cart drawer",
           "collection": {

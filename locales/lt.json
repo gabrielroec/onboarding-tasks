@@ -234,6 +234,10 @@
     }
   },
   "templates": {
+    "404": {
+      "title": "Puslapis nerastas",
+      "subtext": "404"
+    },
     "search": {
       "no_results": "Nerasta jokių rezultatų pagal užklausą „{{ terms }}“. Patikrinkite rašybą arba vartokite kitą žodį ar frazę.",
       "page": "Puslapis",
@@ -287,10 +291,6 @@
         "error_heading": "Pakoreguokite toliau pateiktą informaciją.",
         "title": "Kontaktinė forma"
       }
-    },
-    "404": {
-      "title": "Puslapis nerastas",
-      "subtext": "404"
     }
   },
   "sections": {
@@ -334,7 +334,20 @@
       "duties_included_taxes_at_checkout_shipping_at_checkout_with_policy_html": "Muito mokesčiai įtraukti. Mokesčiai, nuolaidos ir <a href=\"{{ link }}\">siuntimo išlaidos</a> apskaičiuojamos atsiskaitant.",
       "duties_included_taxes_at_checkout_shipping_at_checkout_without_policy": "Muito mokesčiai įtraukti. Mokesčiai, nuolaidos ir siuntimo išlaidos apskaičiuojamos atsiskaitant.",
       "taxes_at_checkout_shipping_at_checkout_with_policy_html": "Mokesčiai, nuolaidos ir <a href=\"{{ link }}\">siuntimo išlaidos</a> apskaičiuojamos atsiskaitant.",
-      "taxes_at_checkout_shipping_at_checkout_without_policy": "Mokesčiai, nuolaidos ir siuntimo išlaidos apskaičiuojamos atsiskaitant."
+      "taxes_at_checkout_shipping_at_checkout_without_policy": "Mokesčiai, nuolaidos ir siuntimo išlaidos apskaičiuojamos atsiskaitant.",
+      "discount_code": {
+        "heading": "Discount code",
+        "label": "Discount code",
+        "placeholder": "Enter code",
+        "apply": "Apply",
+        "remove": "Remove discount",
+        "removing": "Removing",
+        "applying": "Applying",
+        "success_default": "Coupon {{ code }} applied!",
+        "error_default": "Invalid discount code",
+        "empty_error": "Enter a discount code",
+        "applied_summary": "Active discounts"
+      }
     },
     "footer": {
       "payment": "Mokėjimo būdai"

@@ -1,0 +1,136 @@
+{% comment %}
+  Feature: Cart Discount Code
+  Description: Coupon input UI for applying/removing discount codes on the cart (Shopify Cart API)
+{% endcomment %}
+
+{%- liquid
+  assign ctx = context | default: 'page'
+  assign id_prefix = 'CartDiscount'
+  if ctx == 'drawer'
+    assign id_prefix = 'CartDrawer-Discount'
+  endif
+
+  assign heading_text = settings.cart_discount_heading
+  if heading_text == blank
+    assign heading_text = 'sections.cart.discount_code.heading' | t
+  endif
+
+  assign placeholder_text = settings.cart_discount_placeholder
+  if placeholder_text == blank
+    assign placeholder_text = 'sections.cart.discount_code.placeholder' | t
+  endif
+
+  assign btn_apply = settings.cart_discount_button_label
+  if btn_apply == blank
+    assign btn_apply = 'sections.cart.discount_code.apply' | t
+  endif
+
+  assign btn_remove = settings.cart_discount_remove_label
+  if btn_remove == blank
+    assign btn_remove = 'sections.cart.discount_code.remove' | t
+  endif
+
+  assign msg_success = settings.cart_discount_success_message
+  if msg_success == blank
+    assign msg_success = 'sections.cart.discount_code.success_default' | t
+  endif
+
+  assign msg_error = settings.cart_discount_error_message
+  if msg_error == blank
+    assign msg_error = 'sections.cart.discount_code.error_default' | t
+  endif
+
+  assign msg_empty = settings.cart_discount_empty_error
+  if msg_empty == blank
+    assign msg_empty = 'sections.cart.discount_code.empty_error' | t
+  endif
+
+  assign show_remove = false
+  if cart.discount_codes.size > 0
+    for dc in cart.discount_codes
+      assign code_part = dc.code | default: dc | strip
+      unless code_part == blank
+        assign show_remove = true
+        break
+      endunless
+    endfor
+  endif
+  unless show_remove
+    for da in cart.cart_level_discount_applications
+      if da.type == 'discount_code'
+        assign show_remove = true
+        break
+      endif
+    endfor
+  endunless
+  unless show_remove
+    for item in cart.items
+      for allocation in item.line_level_discount_allocations
+        if allocation.discount_application != blank and allocation.discount_application.type == 'discount_code'
+          assign show_remove = true
+          break
+        endif
+      endfor
+      if show_remove
+        break
+      endif
+    endfor
+  endunless
+-%}
+
+<cart-discount-code
+  class="cart-discount-code"
+  data-cart-discount-context="{{ ctx }}"
+  data-success-template="{{ msg_success | escape }}"
+  data-error-message="{{ msg_error | escape }}"
+  data-empty-message="{{ msg_empty | escape }}"
+  data-applying-label="{{ 'sections.cart.discount_code.applying' | t | escape }}"
+>
+  <div class="cart-discount-code__box">
+    <h3 class="cart-discount-code__title">{{ heading_text | escape }}</h3>
+
+    <div class="cart-discount-code__field field">
+      <label class="field__label" for="{{ id_prefix }}-input">{{ 'sections.cart.discount_code.label' | t }}</label>
+      <div class="cart-discount-code__row">
+        <input
+          type="text"
+          name="discount"
+          id="{{ id_prefix }}-input"
+          class="field__input"
+          autocomplete="off"
+          autocapitalize="characters"
+          placeholder="{{ placeholder_text | escape }}"
+          value=""
+          data-cart-discount-input
+        >
+        <button
+          type="button"
+          class="button cart-discount-code__apply"
+          data-cart-discount-apply
+        >
+          <span class="cart-discount-code__apply-label">{{ btn_apply | escape }}</span>
+          {%- render 'loading-spinner', class: 'loading__spinner cart-discount-code__apply-spinner' -%}
+        </button>
+      </div>
+    </div>
+
+    <button
+      type="button"
+      class="button button--tertiary cart-discount-code__remove"
+      data-cart-discount-remove
+      {% unless show_remove %}
+        hidden
+      {% endunless %}
+    >
+      {{ btn_remove | escape }}
+    </button>
+
+    <div
+      class="cart-discount-code__feedback visually-hidden"
+      data-cart-discount-feedback
+      role="status"
+      aria-live="polite"
+      tabindex="-1"
+    ></div>
+  </div>
+</cart-discount-code>

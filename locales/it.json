@@ -230,6 +230,10 @@
     }
   },
   "templates": {
+    "404": {
+      "title": "Pagina non trovata",
+      "subtext": "404"
+    },
     "search": {
       "no_results": "Nessun risultato per \"{{ terms }}\". Controlla l'ortografia o usa una parola o una frase diversa.",
       "page": "Pagina",
@@ -278,10 +282,6 @@
         "error_heading": "Correggi gli errori seguenti:",
         "title": "Modulo di contatto"
       }
-    },
-    "404": {
-      "title": "Pagina non trovata",
-      "subtext": "404"
     }
   },
   "sections": {
@@ -324,7 +324,20 @@
       "duties_included_taxes_at_checkout_shipping_at_checkout_with_policy_html": "Dazi inclusi. Imposte, sconti e <a href=\"{{ link }}\">spedizione</a> calcolati al check-out.",
       "duties_included_taxes_at_checkout_shipping_at_checkout_without_policy": "Dazi inclusi. Imposte, sconti e spedizione calcolati al check-out.",
       "taxes_at_checkout_shipping_at_checkout_with_policy_html": "Imposte, sconti e <a href=\"{{ link }}\">spedizione</a> calcolati al check-out.",
-      "taxes_at_checkout_shipping_at_checkout_without_policy": "Imposte, sconti e spedizione calcolati al check-out."
+      "taxes_at_checkout_shipping_at_checkout_without_policy": "Imposte, sconti e spedizione calcolati al check-out.",
+      "discount_code": {
+        "heading": "Discount code",
+        "label": "Discount code",
+        "placeholder": "Enter code",
+        "apply": "Apply",
+        "remove": "Remove discount",
+        "removing": "Removing",
+        "applying": "Applying",
+        "success_default": "Coupon {{ code }} applied!",
+        "error_default": "Invalid discount code",
+        "empty_error": "Enter a discount code",
+        "applied_summary": "Active discounts"
+      }
     },
     "footer": {
       "payment": "Metodi di pagamento"

@@ -226,6 +226,10 @@
     }
   },
   "templates": {
+    "404": {
+      "title": "Страницата не е открита",
+      "subtext": "404"
+    },
     "search": {
       "no_results": "Няма резултати за „{{ terms }}“. Проверете начина на изписване или използвайте различна дума или фраза.",
       "results_with_count": {
@@ -269,10 +273,6 @@
         "phone": "Телефонен номер",
         "title": "Формуляр за контакт"
       }
-    },
-    "404": {
-      "title": "Страницата не е открита",
-      "subtext": "404"
     }
   },
   "sections": {
@@ -314,7 +314,20 @@
       "duties_included_taxes_at_checkout_shipping_at_checkout_with_policy_html": "С включено мито. Данъците, отстъпките и <a href=\"{{ link }}\">доставката</a> се изчисляват при плащане.",
       "duties_included_taxes_at_checkout_shipping_at_checkout_without_policy": "С включено мито. Данъците, отстъпките и доставката се изчисляват при плащане.",
       "taxes_at_checkout_shipping_at_checkout_with_policy_html": "Данъците, отстъпките и <a href=\"{{ link }}\">доставката</a> се изчисляват при плащане.",
-      "taxes_at_checkout_shipping_at_checkout_without_policy": "Данъците, отстъпките и доставката се изчисляват при плащане."
+      "taxes_at_checkout_shipping_at_checkout_without_policy": "Данъците, отстъпките и доставката се изчисляват при плащане.",
+      "discount_code": {
+        "heading": "Discount code",
+        "label": "Discount code",
+        "placeholder": "Enter code",
+        "apply": "Apply",
+        "remove": "Remove discount",
+        "removing": "Removing",
+        "applying": "Applying",
+        "success_default": "Coupon {{ code }} applied!",
+        "error_default": "Invalid discount code",
+        "empty_error": "Enter a discount code",
+        "applied_summary": "Active discounts"
+      }
     },
     "footer": {
       "payment": "Начини на плащане"

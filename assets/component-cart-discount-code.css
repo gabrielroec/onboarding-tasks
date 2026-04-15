@@ -1,0 +1,121 @@
+/**
+ * Feature: Cart Discount Code
+ * Description: Styles for the cart coupon field (Dawn field/button patterns)
+ */
+
+.cart-discount-code {
+  display: block;
+  margin-bottom: 1.5rem;
+}
+
+.cart-discount-code .field__input,
+.cart-discount-code .button {
+  box-shadow: none;
+}
+
+.cart-discount-code__title {
+  font-size: calc(var(--font-heading-scale) * 1.3rem);
+  margin: 0 0 1rem;
+}
+
+.cart-discount-code__field .field__label {
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.cart-discount-code__row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  align-items: stretch;
+  width: 100%;
+}
+
+.cart-discount-code__row .field__input {
+  flex: 1 1 12rem;
+  min-width: 0;
+  padding: 0 0 0 1rem
+}
+
+.cart-discount-code__apply {
+  position: relative;
+  flex: 0 0 auto;
+  min-height: calc(4.5rem + var(--inputs-border-width) * 2);
+  overflow: hidden;
+}
+
+.cart-discount-code__apply-label {
+  transition: opacity 0.2s ease;
+}
+
+.cart-discount-code__apply .cart-discount-code__apply-spinner {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: 2;
+  width: 1.8rem;
+  height: 1.8rem;
+  margin: -0.9rem 0 0 -0.9rem;
+  display: inline-block;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.22s ease, visibility 0.22s ease;
+  pointer-events: none;
+}
+
+.cart-discount-code__apply--loading .cart-discount-code__apply-label {
+  opacity: 0;
+}
+
+.cart-discount-code__apply--loading .cart-discount-code__apply-spinner {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.2s ease 0.06s, visibility 0.2s ease 0.06s;
+}
+
+.cart-discount-code__apply--loading {
+  min-width: min(100%, 12rem);
+  cursor: wait;
+}
+
+.cart-discount-code__remove {
+  margin-top: 0.8rem;
+  color: rgba(255, 0, 0, 0.8);
+  padding: 0;
+  justify-content: flex-start;
+}
+
+.cart-discount-code__remove--loading {
+  cursor: wait;
+  opacity: 0.85;
+}
+
+/* Garantir que [hidden] oculte o botão (alguns estilos .button do tema sobrescrevem display) */
+.cart-discount-code__remove[hidden] {
+  display: none !important;
+}
+
+.cart-discount-code__feedback {
+  margin-top: 1rem;
+  padding: 0.75rem 1rem;
+  border-radius: var(--inputs-radius);
+  outline: none;
+}
+
+.cart-discount-code__feedback:not(.visually-hidden) {
+  display: block;
+}
+
+.cart-discount-code__feedback--success {
+  background-color: rgba(var(--color-foreground), 0.06);
+  color: rgb(var(--color-foreground));
+}
+
+.cart-discount-code__feedback--error {
+  border: 0.1rem solid rgba(180, 35, 35, 0.45);
+  color: rgb(var(--color-foreground));
+}
+
+.drawer__footer .cart-discount-code {
+  margin-bottom: 1.2rem;
+}

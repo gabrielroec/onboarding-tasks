@@ -226,6 +226,10 @@
     }
   },
   "templates": {
+    "404": {
+      "title": "ページが見つかりません",
+      "subtext": "404"
+    },
     "search": {
       "no_results": "「{{ terms }}」に一致する結果は見つかりませんでした。スペルを確認するか、別の単語やフレーズを使用してください。",
       "results_with_count": {
@@ -269,10 +273,6 @@
         "error_heading": "以下を確認してください。",
         "title": "お問い合わせフォーム"
       }
-    },
-    "404": {
-      "title": "ページが見つかりません",
-      "subtext": "404"
     }
   },
   "sections": {
@@ -314,7 +314,20 @@
       "duties_included_taxes_at_checkout_shipping_at_checkout_with_policy_html": "関税込。税、ディスカウント、および<a href=\"{{ link }}\">配送料</a>はチェックアウト時に計算されます。",
       "duties_included_taxes_at_checkout_shipping_at_checkout_without_policy": "関税込。税、ディスカウント、および配送料はチェックアウト時に計算されます。",
       "taxes_at_checkout_shipping_at_checkout_with_policy_html": "税、ディスカウント、および<a href=\"{{ link }}\">配送料</a>はチェックアウト時に計算されます。",
-      "taxes_at_checkout_shipping_at_checkout_without_policy": "税、ディスカウント、および配送料はチェックアウト時に計算されます。"
+      "taxes_at_checkout_shipping_at_checkout_without_policy": "税、ディスカウント、および配送料はチェックアウト時に計算されます。",
+      "discount_code": {
+        "heading": "Discount code",
+        "label": "Discount code",
+        "placeholder": "Enter code",
+        "apply": "Apply",
+        "remove": "Remove discount",
+        "removing": "Removing",
+        "applying": "Applying",
+        "success_default": "Coupon {{ code }} applied!",
+        "error_default": "Invalid discount code",
+        "empty_error": "Enter a discount code",
+        "applied_summary": "Active discounts"
+      }
     },
     "footer": {
       "payment": "決済方法"

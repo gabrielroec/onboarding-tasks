@@ -256,6 +256,10 @@
     {% endstyle %}
 
     {{ 'base.css' | asset_url | stylesheet_tag }}
+    {% comment %} Feature: Cart Discount Code — component styles {% endcomment %}
+    {%- if settings.enable_cart_discount_code -%}
+      {{ 'component-cart-discount-code.css' | asset_url | stylesheet_tag }}
+    {%- endif -%}
     <link rel="stylesheet" href="{{ 'component-cart-items.css' | asset_url }}" media="print" onload="this.media='all'">
 
     {%- if settings.cart_type == 'drawer' -%}
@@ -371,6 +375,11 @@
 
     {%- if settings.cart_type == 'drawer' -%}
       <script src="{{ 'cart-drawer.js' | asset_url }}" defer="defer"></script>
+    {%- endif -%}
+
+    {% comment %} Feature: Cart Discount Code — cart coupon apply/remove {% endcomment %}
+    {%- if settings.enable_cart_discount_code -%}
+      <script src="{{ 'cart-discount-code.js' | asset_url }}" defer="defer"></script>
     {%- endif -%}
   </body>
 </html>

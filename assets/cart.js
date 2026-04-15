@@ -28,8 +28,9 @@ class CartItems extends HTMLElement {
   cartUpdateUnsubscriber = undefined;
 
   connectedCallback() {
+    /* Feature: Cart Discount Code — avoid duplicate section refresh when coupon flow already re-rendered the cart */
     this.cartUpdateUnsubscriber = subscribe(PUB_SUB_EVENTS.cartUpdate, (event) => {
-      if (event.source === 'cart-items') {
+      if (event.source === 'cart-items' || event.source === 'cart-discount-code') {
         return;
       }
       return this.onCartUpdate();

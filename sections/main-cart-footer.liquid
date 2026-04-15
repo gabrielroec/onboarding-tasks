@@ -1,3 +1,7 @@
+{% comment %}
+  Feature: Cart Discount Code
+  Description: Coupon field is rendered below (snippet cart-discount-code); assets load from theme.liquid when setting is enabled
+{% endcomment %}
 {{ 'component-cart.css' | asset_url | stylesheet_tag }}
 {{ 'component-totals.css' | asset_url | stylesheet_tag }}
 {{ 'component-price.css' | asset_url | stylesheet_tag }}
@@ -35,6 +39,10 @@
             placeholder="{{ 'sections.cart.note' | t }}"
           >{{ cart.note }}</textarea>
         </cart-note>
+      {%- endif -%}
+
+      {%- if settings.enable_cart_discount_code and cart != empty -%}
+        {% render 'cart-discount-code', context: 'page' %}
       {%- endif -%}
 
       <div class="cart__blocks">

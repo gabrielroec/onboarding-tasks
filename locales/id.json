@@ -226,6 +226,10 @@
     }
   },
   "templates": {
+    "404": {
+      "title": "Halaman tidak ditemukan",
+      "subtext": "404"
+    },
     "search": {
       "no_results": "Tidak ada hasil ditemukan untuk “{{ terms }}”. Periksa ejaan atau gunakan kata atau frasa yang berbeda.",
       "results_with_count": {
@@ -269,10 +273,6 @@
         "error_heading": "Mohon sesuaikan:",
         "title": "Formulir kontak"
       }
-    },
-    "404": {
-      "title": "Halaman tidak ditemukan",
-      "subtext": "404"
     }
   },
   "sections": {
@@ -314,7 +314,20 @@
       "duties_included_taxes_at_checkout_shipping_at_checkout_with_policy_html": "Termasuk bea cukai. Pajak, diskon, dan <a href=\"{{ link }}\">biaya pengiriman</a> dihitung saat checkout.",
       "duties_included_taxes_at_checkout_shipping_at_checkout_without_policy": "Termasuk bea cukai. Pajak, diskon, dan biaya pengiriman dihitung saat checkout.",
       "taxes_at_checkout_shipping_at_checkout_with_policy_html": "Pajak, diskon, dan <a href=\"{{ link }}\">biaya pengiriman</a> dihitung saat checkout.",
-      "taxes_at_checkout_shipping_at_checkout_without_policy": "Pajak, diskon, dan biaya pengiriman dihitung saat checkout."
+      "taxes_at_checkout_shipping_at_checkout_without_policy": "Pajak, diskon, dan biaya pengiriman dihitung saat checkout.",
+      "discount_code": {
+        "heading": "Discount code",
+        "label": "Discount code",
+        "placeholder": "Enter code",
+        "apply": "Apply",
+        "remove": "Remove discount",
+        "removing": "Removing",
+        "applying": "Applying",
+        "success_default": "Coupon {{ code }} applied!",
+        "error_default": "Invalid discount code",
+        "empty_error": "Enter a discount code",
+        "applied_summary": "Active discounts"
+      }
     },
     "footer": {
       "payment": "Metode pembayaran"

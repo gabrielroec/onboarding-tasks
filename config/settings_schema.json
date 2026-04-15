@@ -1419,7 +1419,7 @@
             "label": "t:settings_schema.cart.settings.cart_type.notification.label"
           }
         ],
-        "default": "notification",
+        "default": "drawer",
         "label": "t:settings_schema.cart.settings.cart_type.label"
       },
       {
@@ -1433,6 +1433,59 @@
         "id": "show_cart_note",
         "label": "t:settings_schema.cart.settings.show_cart_note.label",
         "default": false
+      },
+      {
+        "type": "header",
+        "content": "t:settings_schema.cart.settings.discount_code.header"
+      },
+      {
+        "type": "checkbox",
+        "id": "enable_cart_discount_code",
+        "label": "t:settings_schema.cart.settings.discount_code.enable.label",
+        "default": true
+      },
+      {
+        "type": "text",
+        "id": "cart_discount_heading",
+        "label": "t:settings_schema.cart.settings.discount_code.heading.label",
+        "default": "Cupom de desconto"
+      },
+      {
+        "type": "text",
+        "id": "cart_discount_placeholder",
+        "label": "t:settings_schema.cart.settings.discount_code.placeholder.label",
+        "default": "Digite o código"
+      },
+      {
+        "type": "text",
+        "id": "cart_discount_button_label",
+        "label": "t:settings_schema.cart.settings.discount_code.button.label",
+        "default": "Aplicar"
+      },
+      {
+        "type": "text",
+        "id": "cart_discount_remove_label",
+        "label": "t:settings_schema.cart.settings.discount_code.remove.label",
+        "default": "Remover"
+      },
+      {
+        "type": "text",
+        "id": "cart_discount_success_message",
+        "label": "t:settings_schema.cart.settings.discount_code.success.label",
+        "info": "t:settings_schema.cart.settings.discount_code.success.info",
+        "default": "Cupom {{ code }} aplicado!"
+      },
+      {
+        "type": "text",
+        "id": "cart_discount_error_message",
+        "label": "t:settings_schema.cart.settings.discount_code.error.label",
+        "default": "Cupom inválido"
+      },
+      {
+        "type": "text",
+        "id": "cart_discount_empty_error",
+        "label": "t:settings_schema.cart.settings.discount_code.empty_error.label",
+        "default": "Digite um cupom"
       },
       {
         "type": "header",

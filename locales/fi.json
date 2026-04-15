@@ -226,6 +226,10 @@
     }
   },
   "templates": {
+    "404": {
+      "title": "Sivua ei löytynyt",
+      "subtext": "404"
+    },
     "search": {
       "no_results": "Ei tuloksia haulla \"{{ terms }}\". Tarkista oikeinkirjoitus tai kokeile toista sanaa tai ilmaisua.",
       "results_with_count": {
@@ -269,10 +273,6 @@
         "error_heading": "Mukauta seuraavat:",
         "title": "Yhteydenottolomake"
       }
-    },
-    "404": {
-      "title": "Sivua ei löytynyt",
-      "subtext": "404"
     }
   },
   "sections": {
@@ -314,7 +314,20 @@
       "duties_included_taxes_at_checkout_shipping_at_checkout_with_policy_html": "Sisältää tullit. Verot, alennukset ja <a href=\"{{ link }}\">toimituskulut</a> lasketaan kassalla.",
       "duties_included_taxes_at_checkout_shipping_at_checkout_without_policy": "Sisältää tullit. Verot, alennukset ja toimituskulut lasketaan kassalla.",
       "taxes_at_checkout_shipping_at_checkout_with_policy_html": "Verot, alennukset ja <a href=\"{{ link }}\">toimituskulut</a> lasketaan kassalla.",
-      "taxes_at_checkout_shipping_at_checkout_without_policy": "Verot, alennukset ja toimituskulut lasketaan kassalla."
+      "taxes_at_checkout_shipping_at_checkout_without_policy": "Verot, alennukset ja toimituskulut lasketaan kassalla.",
+      "discount_code": {
+        "heading": "Discount code",
+        "label": "Discount code",
+        "placeholder": "Enter code",
+        "apply": "Apply",
+        "remove": "Remove discount",
+        "removing": "Removing",
+        "applying": "Applying",
+        "success_default": "Coupon {{ code }} applied!",
+        "error_default": "Invalid discount code",
+        "empty_error": "Enter a discount code",
+        "applied_summary": "Active discounts"
+      }
     },
     "footer": {
       "payment": "Maksutavat"
