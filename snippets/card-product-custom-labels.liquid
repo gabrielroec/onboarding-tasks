@@ -1,0 +1,46 @@
+{% comment %}
+  Funcionalidade: etiquetas personalizadas dinâmicas via metaobjetos (custom_label)
+  Descrição: Renderiza até 3 badges a partir de product.metafields.custom.custom_label (lista de referências ao metaobjeto custom_label).
+  Parâmetros:
+    - card_product: produto do card (obrigatório)
+    - section_id: id da secção (opcional; usado em ids únicos)
+  Campos do metaobjeto esperados: title, background_color, text_color
+  Nota: só invocar quando já existir lista não vazia no card-pai (card_has_custom_labels).
+{% endcomment %}
+
+{%- liquid
+  assign label_list = card_product.metafields['custom']['custom_label'].value
+  assign max_custom_labels = 3
+-%}
+
+{%- if label_list != blank -%}
+  {%- for label in label_list limit: max_custom_labels -%}
+    {%- unless label == blank -%}
+      {%- liquid
+        assign label_title = label.title.value | strip
+        if label_title == blank
+          assign label_title = label.title | strip
+        endif
+      -%}
+      {%- if label_title != blank -%}
+        {%- liquid
+          assign bg = label.background_color.value | default: label.background_color
+          assign fg = label.text_color.value | default: label.text_color
+          if bg == blank
+            assign bg = '#1a1a1a'
+          endif
+          if fg == blank
+            assign fg = '#ffffff'
+          endif
+        -%}
+        <span
+          class="badge badge--bottom-left card-product-custom-label"
+          id="CustomLabel-{{ section_id }}-{{ card_product.id }}-{{ forloop.index }}"
+          style="background-color: {{ bg }}; color: {{ fg }}; border-color: rgba(0,0,0,0.12);"
+        >
+          {{- label_title | escape -}}
+        </span>
+      {%- endif -%}
+    {%- endunless -%}
+  {%- endfor -%}
+{%- endif -%}

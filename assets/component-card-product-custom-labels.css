@@ -1,0 +1,23 @@
+/* Funcionalidade: etiquetas personalizadas no card de produto (metaobjetos custom_label) */
+.card__badge--stack {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 0.5rem;
+  max-width: 100%;
+}
+
+.card__badge.right .card__badge--stack {
+  justify-content: flex-end;
+}
+
+.card-product-custom-label {
+  max-width: 100%;
+  word-break: break-word;
+}
+
+@media screen and (forced-colors: active) {
+  .card-product-custom-label {
+    border: 0.1rem solid CanvasText;
+  }
+}
