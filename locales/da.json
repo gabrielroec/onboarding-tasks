@@ -64,6 +64,9 @@
       "next_slide": "Skub til højre",
       "previous_slide": "Skub til venstre",
       "name": "Diasshow"
+    },
+    "installments": {
+      "message": "Up to {{ count }}x of {{ amount }} interest-free"
     }
   },
   "newsletter": {
@@ -226,6 +229,10 @@
     }
   },
   "templates": {
+    "404": {
+      "title": "Siden blev ikke fundet",
+      "subtext": "404"
+    },
     "search": {
       "no_results": "Der blev ikke fundet nogen resultater for “{{ terms }}”. Kontrollér stavemåden, eller brug et andet ord eller udtryk.",
       "results_with_count": {
@@ -269,10 +276,6 @@
         "error_heading": "Juster følgende:",
         "title": "Kontaktformular"
       }
-    },
-    "404": {
-      "title": "Siden blev ikke fundet",
-      "subtext": "404"
     }
   },
   "sections": {

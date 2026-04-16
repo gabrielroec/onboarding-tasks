@@ -64,6 +64,9 @@
       "next_slide": "Deslizar para a direita",
       "previous_slide": "Deslizar para a esquerda",
       "name": "Controle deslizante"
+    },
+    "installments": {
+      "message": "Em até {{ count }}x de {{ amount }} sem juros"
     }
   },
   "newsletter": {

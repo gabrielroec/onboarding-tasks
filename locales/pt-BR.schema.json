@@ -273,6 +273,38 @@
         }
       }
     },
+    "installments": {
+      "name": "Parcelamento",
+      "settings": {
+        "header": {
+          "content": "Exibição de parcelamento"
+        },
+        "enable": {
+          "label": "Exibir informações de parcelamento"
+        },
+        "show_on_cards": {
+          "label": "Exibir no card de produto (vitrine)"
+        },
+        "show_on_pdp": {
+          "label": "Exibir na página de produto (PDP)"
+        },
+        "show_on_cart": {
+          "label": "Exibir no total do carrinho"
+        },
+        "max_count": {
+          "label": "Quantidade máxima de parcelas",
+          "info": "A exibição escolhe a maior quantidade de parcelas possível respeitando o valor mínimo por parcela."
+        },
+        "min_per_installment": {
+          "label": "Valor mínimo por parcela",
+          "info": "Valor inteiro na moeda da loja (ex.: 10 para R$ 10,00)."
+        },
+        "message_template": {
+          "label": "Modelo da mensagem",
+          "info": "Use {{ count }} para a quantidade de parcelas e {{ amount }} para o valor da parcela (formatado na moeda da loja)."
+        }
+      }
+    },
     "cards": {
       "name": "Cartões de produtos",
       "settings": {

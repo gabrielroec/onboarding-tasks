@@ -1,0 +1,25 @@
+/*
+  Feature: Installment Display Rules
+  Description: Styles for the installment informational text (cards, PDP, cart totals).
+*/
+
+.installment-display {
+  margin-top: 0.6rem;
+  margin-bottom: 0;
+  color: rgb(var(--color-foreground));
+}
+
+.installment-display[data-context='card'] {
+  margin-top: 0.4rem;
+}
+
+.installment-display[data-context='cart'] {
+  margin-top: 0.8rem;
+}
+
+@media screen and (max-width: 749px) {
+  .installment-display {
+    margin-top: 0.5rem;
+  }
+}
+

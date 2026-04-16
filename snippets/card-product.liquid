@@ -25,6 +25,11 @@
   {{ 'component-volume-pricing.css' | asset_url | stylesheet_tag }}
 
   {{ 'component-price.css' | asset_url | stylesheet_tag }}
+  {%- comment -%}
+    Feature: Installment Display Rules
+    Description: Loads installment display styles for product cards
+  {%- endcomment -%}
+  {{ 'component-installment-display.css' | asset_url | stylesheet_tag }}
   {{ 'quick-order-list.css' | asset_url | stylesheet_tag }}
   {{ 'quantity-popover.css' | asset_url | stylesheet_tag }}
 {%- endunless -%}
@@ -205,6 +210,17 @@
             {%- endif -%}
 
             {% render 'price', product: card_product, price_class: '', show_compare_at_price: true %}
+            {%- comment -%}
+              Feature: Installment Display Rules
+              Description: Shows installment info on product cards (vitrine)
+            {%- endcomment -%}
+            {%- liquid
+              assign installment_base_cents = card_product.selected_or_first_available_variant.price
+              if card_product.price_varies
+                assign installment_base_cents = card_product.price_min
+              endif
+            -%}
+            {%- render 'installment-display', amount_cents: installment_base_cents, context: 'card' -%}
             {%- if card_product.quantity_price_breaks_configured? -%}
               {% if card_product.variants_count == 1 and quick_add == 'bulk' %}
                 {% liquid

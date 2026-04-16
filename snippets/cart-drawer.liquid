@@ -7,6 +7,11 @@
 
 {{ 'quantity-popover.css' | asset_url | stylesheet_tag }}
 {{ 'component-card.css' | asset_url | stylesheet_tag }}
+{%- comment -%}
+  Feature: Installment Display Rules
+  Description: Loads installment display styles for cart drawer totals
+{%- endcomment -%}
+{{ 'component-installment-display.css' | asset_url | stylesheet_tag }}
 
 <script src="{{ 'cart.js' | asset_url }}" defer="defer"></script>
 <script src="{{ 'quantity-popover.js' | asset_url }}" defer="defer"></script>
@@ -517,6 +522,11 @@
             <h2 class="totals__total">{{ 'sections.cart.estimated_total' | t }}</h2>
             <p class="totals__total-value">{{ cart.total_price | money_with_currency }}</p>
           </div>
+          {%- comment -%}
+            Feature: Installment Display Rules
+            Description: Shows installment info on cart total (cart drawer)
+          {%- endcomment -%}
+          {%- render 'installment-display', amount_cents: cart.total_price, context: 'cart' -%}
 
           <small class="tax-note caption-large rte">
             {%- if cart.duties_included and cart.taxes_included -%}

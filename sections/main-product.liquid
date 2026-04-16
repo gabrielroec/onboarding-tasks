@@ -12,6 +12,11 @@
   {{ 'section-main-product.css' | asset_url | stylesheet_tag }}
   {{ 'component-accordion.css' | asset_url | stylesheet_tag }}
   {{ 'component-price.css' | asset_url | stylesheet_tag }}
+  {%- comment -%}
+    Feature: Installment Display Rules
+    Description: Loads installment display styles for PDP
+  {%- endcomment -%}
+  {{ 'component-installment-display.css' | asset_url | stylesheet_tag }}
   {{ 'component-slider.css' | asset_url | stylesheet_tag }}
   {{ 'component-rating.css' | asset_url | stylesheet_tag }}
   {{ 'component-deferred-media.css' | asset_url | stylesheet_tag }}
@@ -114,6 +119,14 @@
                     price_class: 'price--large'
                   -%}
                 </div>
+                {%- comment -%}
+                  Feature: Installment Display Rules
+                  Description: Shows installment info on the product page (PDP), based on selected variant price.
+                {%- endcomment -%}
+                {%- render 'installment-display',
+                  amount_cents: product.selected_or_first_available_variant.price,
+                  context: 'pdp'
+                -%}
                 {%- if product.quantity_price_breaks_configured? -%}
                   <div class="volume-pricing-note" id="Volume-Note-{{ section.id }}">
                     <span>{{ 'products.product.volume_pricing.note' | t }}</span>

@@ -64,6 +64,9 @@
       "next_slide": "Slide right",
       "previous_slide": "Slide left",
       "name": "Slider"
+    },
+    "installments": {
+      "message": "Up to {{ count }}x of {{ amount }} interest-free"
     }
   },
   "newsletter": {

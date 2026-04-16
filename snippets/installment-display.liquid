@@ -1,0 +1,84 @@
+{% comment %}
+  Feature: Installment Display Rules
+  Description: Displays configurable installment information on product cards, PDP and cart total.
+
+  Accepts:
+  - amount_cents: {Number} Base amount in the shop currency's minor unit (e.g. cents)
+  - context: {String} One of: 'card', 'pdp', 'cart'
+
+  Notes:
+  - This is an informational display only (no payment gateway integration).
+  - If the rules do not allow at least 2 installments, nothing is rendered.
+{% endcomment %}
+
+{%- liquid
+  assign enabled = settings.enable_installment_display
+  assign ctx = context | default: ''
+
+  assign show_in_context = false
+  if ctx == 'card' and settings.installment_show_on_cards
+    assign show_in_context = true
+  elsif ctx == 'pdp' and settings.installment_show_on_pdp
+    assign show_in_context = true
+  elsif ctx == 'cart' and settings.installment_show_on_cart
+    assign show_in_context = true
+  endif
+
+  assign base_cents = amount_cents | default: 0
+  assign max_count = settings.installment_max_count | default: 1
+  assign min_units = settings.installment_min_per_installment | default: 0
+  assign min_cents = min_units | times: 100
+
+  assign computed_count = 1
+  if min_cents > 0
+    assign computed_count = base_cents | divided_by: min_cents
+  else
+    assign computed_count = max_count
+  endif
+
+  if computed_count > max_count
+    assign computed_count = max_count
+  endif
+
+  if computed_count < 1
+    assign computed_count = 1
+  endif
+
+  assign should_render = true
+  unless enabled
+    assign should_render = false
+  endunless
+  unless show_in_context
+    assign should_render = false
+  endunless
+  if base_cents <= 0
+    assign should_render = false
+  endif
+  if computed_count < 2
+    assign should_render = false
+  endif
+-%}
+
+{%- if should_render -%}
+  {%- liquid
+    assign per_installment_cents = base_cents | divided_by: computed_count
+    assign remainder = base_cents | modulo: computed_count
+    if remainder > 0
+      assign per_installment_cents = per_installment_cents | plus: 1
+    endif
+
+    assign amount_formatted = per_installment_cents | money
+
+    assign template = settings.installment_message_template | default: ''
+    if template == blank
+      assign template = 'general.installments.message' | t
+    endif
+
+    assign message = template | replace: '{{ count }}', computed_count | replace: '{{ amount }}', amount_formatted
+  -%}
+
+  <p class="installment-display caption-large" data-installment-display data-context="{{ ctx | escape }}">
+    {{ message | escape }}
+  </p>
+{%- endif -%}
+

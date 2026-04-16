@@ -370,6 +370,38 @@
           }
         }
       }
+    },
+    "installments": {
+      "name": "Installments",
+      "settings": {
+        "header": {
+          "content": "Installment display"
+        },
+        "enable": {
+          "label": "Show installment information"
+        },
+        "show_on_cards": {
+          "label": "Show on product cards"
+        },
+        "show_on_pdp": {
+          "label": "Show on product page (PDP)"
+        },
+        "show_on_cart": {
+          "label": "Show on cart total"
+        },
+        "max_count": {
+          "label": "Maximum number of installments",
+          "info": "The display will choose the highest number of installments that respects the minimum per installment."
+        },
+        "min_per_installment": {
+          "label": "Minimum amount per installment",
+          "info": "Whole units in your store currency (e.g. 10 for .00)."
+        },
+        "message_template": {
+          "label": "Message template",
+          "info": "Use {{ count }} for installments count and {{ amount }} for the installment value (formatted in your currency)."
+        }
+      }
     }
   },
   "sections": {

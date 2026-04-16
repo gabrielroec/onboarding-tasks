@@ -1451,5 +1451,59 @@
         "default": "scheme-1"
       }
     ]
+  },
+  {
+    "name": "t:settings_schema.installments.name",
+    "settings": [
+      {
+        "type": "header",
+        "content": "t:settings_schema.installments.settings.header.content"
+      },
+      {
+        "type": "checkbox",
+        "id": "enable_installment_display",
+        "label": "t:settings_schema.installments.settings.enable.label",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "installment_show_on_cards",
+        "label": "t:settings_schema.installments.settings.show_on_cards.label",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "installment_show_on_pdp",
+        "label": "t:settings_schema.installments.settings.show_on_pdp.label",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "installment_show_on_cart",
+        "label": "t:settings_schema.installments.settings.show_on_cart.label",
+        "default": true
+      },
+      {
+        "type": "number",
+        "id": "installment_max_count",
+        "label": "t:settings_schema.installments.settings.max_count.label",
+        "info": "t:settings_schema.installments.settings.max_count.info",
+        "default": 12
+      },
+      {
+        "type": "number",
+        "id": "installment_min_per_installment",
+        "label": "t:settings_schema.installments.settings.min_per_installment.label",
+        "info": "t:settings_schema.installments.settings.min_per_installment.info",
+        "default": 10
+      },
+      {
+        "type": "textarea",
+        "id": "installment_message_template",
+        "label": "t:settings_schema.installments.settings.message_template.label",
+        "info": "t:settings_schema.installments.settings.message_template.info",
+        "default": "Em até {{ count }}x de {{ amount }} sem juros"
+      }
+    ]
   }
 ]
