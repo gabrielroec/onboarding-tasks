@@ -242,4 +242,4 @@ Mesma lógica em três pontos de renderização; duplicação mínima (apenas o 
 
 - Tratar a feature como **UX**, não como controlo de acesso.
 - Manter a tag na Admin alinhada com a configuração (normalização: case + trim nas pontas).
-- Para alterações futuras, procurar pelo comentário **“Feature: Exclusive Collection Menu Item by Customer Tag”** nos ficheiros tocados.
+- Para alterações futuras, procurar pelo comentário **“Funcionalidade: menu exclusivo por tag de cliente”** (ou o bloco equivalente no snippet `header-customer-tag-exclusive-nav-item`) nos ficheiros tocados.
