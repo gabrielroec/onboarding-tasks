@@ -1,7 +1,14 @@
+{% comment %}
+  Feature: Free Shipping Progress Bar
+  Description: Styles loaded when setting enabled; snippet rendered below
+{% endcomment %}
 {{ 'component-cart.css' | asset_url | stylesheet_tag }}
 {{ 'component-totals.css' | asset_url | stylesheet_tag }}
 {{ 'component-price.css' | asset_url | stylesheet_tag }}
 {{ 'component-discounts.css' | asset_url | stylesheet_tag }}
+{%- if settings.enable_free_shipping_progress -%}
+  {{ 'component-free-shipping-progress.css' | asset_url | stylesheet_tag }}
+{%- endif -%}
 
 {%- style -%}
   .section-{{ section.id }}-padding {
@@ -36,6 +43,9 @@
           >{{ cart.note }}</textarea>
         </cart-note>
       {%- endif -%}
+
+      {% comment %} Feature: Free Shipping Progress Bar (cart page only — not cart drawer) {% endcomment %}
+      {% render 'cart-free-shipping-progress', section_id: section.id %}
 
       <div class="cart__blocks">
         {% for block in section.blocks %}

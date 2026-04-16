@@ -270,6 +270,27 @@
             "label": "Collezione",
             "info": "Visibile quando la finestra del carrello è vuota"
           }
+        },
+        "free_shipping": {
+          "header": "Free shipping progress bar",
+          "enable": {
+            "label": "Show free shipping progress bar"
+          },
+          "minimum": {
+            "label": "Minimum order amount",
+            "info": "Whole units in your store currency. Compared to cart items subtotal."
+          },
+          "heading": {
+            "label": "Heading",
+            "info": "Leave empty to use the default translation."
+          },
+          "message_remaining": {
+            "label": "Message before goal is reached",
+            "info": "Use {{ amount }} where the remaining amount should appear."
+          },
+          "message_success": {
+            "label": "Message when goal is reached"
+          }
         }
       }
     },

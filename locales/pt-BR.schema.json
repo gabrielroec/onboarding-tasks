@@ -264,6 +264,27 @@
         "show_cart_note": {
           "label": "Observação do carrinho"
         },
+        "free_shipping": {
+          "header": "Barra de progresso de frete grátis",
+          "enable": {
+            "label": "Exibir barra de progresso de frete grátis"
+          },
+          "minimum": {
+            "label": "Valor mínimo do pedido",
+            "info": "Valor inteiro na moeda da loja (ex.: 199 para R$ 199,00). Comparado ao subtotal dos itens do carrinho."
+          },
+          "heading": {
+            "label": "Título",
+            "info": "Deixe em branco para usar o texto padrão da tradução."
+          },
+          "message_remaining": {
+            "label": "Mensagem antes de atingir a meta",
+            "info": "Use {{ amount }} onde o valor restante deve aparecer (formatado na moeda da loja)."
+          },
+          "message_success": {
+            "label": "Mensagem ao atingir a meta"
+          }
+        },
         "cart_drawer": {
           "header": "Carrinho de compras deslizante",
           "collection": {

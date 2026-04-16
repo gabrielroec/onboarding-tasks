@@ -339,6 +339,27 @@
         "show_cart_note": {
           "label": "Cart note"
         },
+        "free_shipping": {
+          "header": "Free shipping progress bar",
+          "enable": {
+            "label": "Show free shipping progress bar"
+          },
+          "minimum": {
+            "label": "Minimum order amount",
+            "info": "Whole units in your store currency (e.g. 199 for $199.00). Compared to cart items subtotal."
+          },
+          "heading": {
+            "label": "Heading",
+            "info": "Leave empty to use the default translation."
+          },
+          "message_remaining": {
+            "label": "Message before goal is reached",
+            "info": "Use {{ amount }} where the remaining amount should appear (formatted in your currency)."
+          },
+          "message_success": {
+            "label": "Message when goal is reached"
+          }
+        },
         "cart_drawer": {
           "header": "Cart drawer",
           "collection": {

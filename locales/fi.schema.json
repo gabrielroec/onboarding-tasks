@@ -284,6 +284,27 @@
             "label": "Kokoelma",
             "info": "Näytetään, kun veto-ostoskori on tyhjä"
           }
+        },
+        "free_shipping": {
+          "header": "Free shipping progress bar",
+          "enable": {
+            "label": "Show free shipping progress bar"
+          },
+          "minimum": {
+            "label": "Minimum order amount",
+            "info": "Whole units in your store currency. Compared to cart items subtotal."
+          },
+          "heading": {
+            "label": "Heading",
+            "info": "Leave empty to use the default translation."
+          },
+          "message_remaining": {
+            "label": "Message before goal is reached",
+            "info": "Use {{ amount }} where the remaining amount should appear."
+          },
+          "message_success": {
+            "label": "Message when goal is reached"
+          }
         }
       }
     },

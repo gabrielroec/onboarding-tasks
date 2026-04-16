@@ -1436,6 +1436,42 @@
       },
       {
         "type": "header",
+        "content": "t:settings_schema.cart.settings.free_shipping.header"
+      },
+      {
+        "type": "checkbox",
+        "id": "enable_free_shipping_progress",
+        "label": "t:settings_schema.cart.settings.free_shipping.enable.label",
+        "default": true
+      },
+      {
+        "type": "number",
+        "id": "free_shipping_minimum",
+        "label": "t:settings_schema.cart.settings.free_shipping.minimum.label",
+        "info": "t:settings_schema.cart.settings.free_shipping.minimum.info",
+        "default": 200
+      },
+      {
+        "type": "text",
+        "id": "free_shipping_heading",
+        "label": "t:settings_schema.cart.settings.free_shipping.heading.label",
+        "info": "t:settings_schema.cart.settings.free_shipping.heading.info"
+      },
+      {
+        "type": "textarea",
+        "id": "free_shipping_message_remaining",
+        "label": "t:settings_schema.cart.settings.free_shipping.message_remaining.label",
+        "info": "t:settings_schema.cart.settings.free_shipping.message_remaining.info",
+        "default": "Faltam {{ amount }} para você ganhar frete grátis!"
+      },
+      {
+        "type": "textarea",
+        "id": "free_shipping_message_success",
+        "label": "t:settings_schema.cart.settings.free_shipping.message_success.label",
+        "default": "Parabéns! Você ganhou frete grátis!"
+      },
+      {
+        "type": "header",
         "content": "t:settings_schema.cart.settings.cart_drawer.header"
       },
       {
