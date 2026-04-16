@@ -234,6 +234,10 @@
     }
   },
   "templates": {
+    "404": {
+      "title": "Strani ni mogoče najti",
+      "subtext": "404"
+    },
     "search": {
       "no_results": "Za »{{ terms }}« ni bil najden noben rezultat. Preverite črkovanje ali uporabite drugo besedo ali frazo.",
       "page": "Stran",
@@ -287,10 +291,6 @@
         "error_heading": "Prilagodite naslednje:",
         "title": "Obrazec za stik"
       }
-    },
-    "404": {
-      "title": "Strani ni mogoče najti",
-      "subtext": "404"
     }
   },
   "sections": {
@@ -406,6 +406,49 @@
       "min_error": "Ta artikel ima najmanj {{ min }}",
       "max_error": "Ta artikel ima največ {{ max }}",
       "step_error": "Ta artikel lahko dodate samo v korakih po {{ step }}."
+    },
+    "video-with-text": {
+      "name": "Video and text",
+      "settings": {
+        "header__source": "Video source",
+        "video_source": {
+          "label": "Video type",
+          "options__1": "YouTube",
+          "options__2": "Vimeo",
+          "options__3": "Upload"
+        },
+        "youtube_video_url": {
+          "label": "YouTube URL",
+          "info": "Paste a YouTube link. The theme extracts the video ID automatically."
+        },
+        "vimeo_video_url": {
+          "label": "Vimeo URL",
+          "info": "Paste a Vimeo link. The theme extracts the video ID automatically."
+        },
+        "video": {
+          "label": "Uploaded video"
+        },
+        "cover_image": {
+          "label": "Cover image (optional)",
+          "info": "Used as the poster before the video loads."
+        },
+        "description": {
+          "label": "Description",
+          "info": "Used for accessibility (video title/label)."
+        },
+        "enable_video_looping": {
+          "label": "Loop video"
+        },
+        "muted": {
+          "label": "Mute video"
+        },
+        "show_controls": {
+          "label": "Show video controls"
+        }
+      },
+      "presets": {
+        "name": "Video and text"
+      }
     }
   },
   "localization": {

@@ -226,6 +226,10 @@
     }
   },
   "templates": {
+    "404": {
+      "title": "Nem találjuk az oldalt",
+      "subtext": "404-es hiba történt."
+    },
     "search": {
       "no_results": "Nincs találat erre: {{ terms }}. Ellenőrizd a helyesírást, vagy írj be egy másik szót vagy kifejezést.",
       "results_with_count": {
@@ -269,10 +273,6 @@
         "error_heading": "Kérjük, helyesbítsd a következőket:",
         "title": "Kapcsolattartói űrlap"
       }
-    },
-    "404": {
-      "title": "Nem találjuk az oldalt",
-      "subtext": "404-es hiba történt."
     }
   },
   "sections": {
@@ -382,6 +382,49 @@
       "min_error": "A termék minimális mennyisége {{ min }}",
       "max_error": "A termék maximális mennyisége {{ max }}",
       "step_error": "A termék mennyisége csak {{ step }} darabos lépésekben növelhető"
+    },
+    "video-with-text": {
+      "name": "Video and text",
+      "settings": {
+        "header__source": "Video source",
+        "video_source": {
+          "label": "Video type",
+          "options__1": "YouTube",
+          "options__2": "Vimeo",
+          "options__3": "Upload"
+        },
+        "youtube_video_url": {
+          "label": "YouTube URL",
+          "info": "Paste a YouTube link. The theme extracts the video ID automatically."
+        },
+        "vimeo_video_url": {
+          "label": "Vimeo URL",
+          "info": "Paste a Vimeo link. The theme extracts the video ID automatically."
+        },
+        "video": {
+          "label": "Uploaded video"
+        },
+        "cover_image": {
+          "label": "Cover image (optional)",
+          "info": "Used as the poster before the video loads."
+        },
+        "description": {
+          "label": "Description",
+          "info": "Used for accessibility (video title/label)."
+        },
+        "enable_video_looping": {
+          "label": "Loop video"
+        },
+        "muted": {
+          "label": "Mute video"
+        },
+        "show_controls": {
+          "label": "Show video controls"
+        }
+      },
+      "presets": {
+        "name": "Video and text"
+      }
     }
   },
   "localization": {

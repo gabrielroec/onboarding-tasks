@@ -226,6 +226,10 @@
     }
   },
   "templates": {
+    "404": {
+      "title": "Không tìm thấy trang",
+      "subtext": "404"
+    },
     "search": {
       "no_results": "Không tìm thấy kết quả cho \"{{ terms }}\". Kiểm tra chính tả hoặc sử dụng một từ hoặc cụm từ khác.",
       "results_with_count": {
@@ -269,10 +273,6 @@
         "error_heading": "Vui lòng điều chỉnh các mục sau:",
         "title": "Biểu mẫu liên hệ"
       }
-    },
-    "404": {
-      "title": "Không tìm thấy trang",
-      "subtext": "404"
     }
   },
   "sections": {
@@ -382,6 +382,49 @@
       "min_error": "Mặt hàng này có tối thiểu {{ min }}",
       "max_error": "Mặt hàng này có tối đa {{ max }}",
       "step_error": "Bạn chỉ có thể thêm mặt hàng này theo đơn vị giao dịch {{ step }}"
+    },
+    "video-with-text": {
+      "name": "Video and text",
+      "settings": {
+        "header__source": "Video source",
+        "video_source": {
+          "label": "Video type",
+          "options__1": "YouTube",
+          "options__2": "Vimeo",
+          "options__3": "Upload"
+        },
+        "youtube_video_url": {
+          "label": "YouTube URL",
+          "info": "Paste a YouTube link. The theme extracts the video ID automatically."
+        },
+        "vimeo_video_url": {
+          "label": "Vimeo URL",
+          "info": "Paste a Vimeo link. The theme extracts the video ID automatically."
+        },
+        "video": {
+          "label": "Uploaded video"
+        },
+        "cover_image": {
+          "label": "Cover image (optional)",
+          "info": "Used as the poster before the video loads."
+        },
+        "description": {
+          "label": "Description",
+          "info": "Used for accessibility (video title/label)."
+        },
+        "enable_video_looping": {
+          "label": "Loop video"
+        },
+        "muted": {
+          "label": "Mute video"
+        },
+        "show_controls": {
+          "label": "Show video controls"
+        }
+      },
+      "presets": {
+        "name": "Video and text"
+      }
     }
   },
   "localization": {

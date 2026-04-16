@@ -1,0 +1,197 @@
+{% comment %}
+  Feature: Video and Text Section
+  Description: Media renderer for the "Video and Text" section. Supports YouTube, Vimeo and uploaded video.
+
+  Accepts:
+  - section: {Object} Section object (required)
+  - media_class: {String} Base class string for the media container (required)
+  - fetch_priority: {String} image fetchpriority for poster/cover image (optional)
+
+  Important:
+  - Dawn's `DeferredMedia` (assets/global.js) only wires the poster click if the button has an id starting with `Deferred-Poster-`.
+  - The `deferred-media` element should include the `media` class so poster layout matches Dawn (`component-deferred-media.css`).
+{% endcomment %}
+
+{%- liquid
+  assign source = section.settings.video_source | default: 'upload'
+
+  assign youtube_video = section.settings.youtube_video_url
+  assign vimeo_video = section.settings.vimeo_video_url
+  assign uploaded_video = section.settings.video
+
+  assign cover_image = section.settings.cover_image
+  assign description = section.settings.description | default: ''
+
+  assign loop_enabled = section.settings.enable_video_looping
+  assign muted = section.settings.muted
+  assign show_controls = section.settings.show_controls
+
+  assign yt_has_id = false
+  if youtube_video != blank and youtube_video.id != blank
+    assign yt_has_id = true
+  endif
+
+  assign vm_has_id = false
+  if vimeo_video != blank and vimeo_video.id != blank
+    assign vm_has_id = true
+  endif
+
+  assign has_video = false
+  assign external_video = null
+  assign play_mode = ''
+
+  if source == 'youtube' and yt_has_id
+    assign has_video = true
+    assign external_video = youtube_video
+    assign play_mode = 'external'
+  elsif source == 'vimeo' and vm_has_id
+    assign has_video = true
+    assign external_video = vimeo_video
+    assign play_mode = 'external'
+  elsif source == 'upload' and uploaded_video != null
+    assign has_video = true
+    assign play_mode = 'upload'
+  elsif source == 'upload' and yt_has_id and uploaded_video == null
+    assign has_video = true
+    assign external_video = youtube_video
+    assign play_mode = 'external'
+  elsif source == 'upload' and vm_has_id and uploaded_video == null
+    assign has_video = true
+    assign external_video = vimeo_video
+    assign play_mode = 'external'
+  endif
+
+  assign poster = null
+  assign external_poster_url = ''
+
+  if cover_image != blank
+    assign poster = cover_image
+  elsif play_mode == 'upload' and uploaded_video != null and uploaded_video.preview_image != blank
+    assign poster = uploaded_video.preview_image
+  elsif play_mode == 'external' and external_video != null and external_video.id != blank
+    if external_video.type == 'youtube'
+      assign external_poster_url = 'https://i.ytimg.com/vi/' | append: external_video.id | append: '/hqdefault.jpg'
+    elsif external_video.type == 'vimeo'
+      assign external_poster_url = 'https://vumbnail.com/' | append: external_video.id | append: '.jpg'
+    endif
+  endif
+
+  assign ratio = 1.7778
+  if play_mode == 'upload' and uploaded_video != null and uploaded_video.aspect_ratio
+    assign ratio = uploaded_video.aspect_ratio
+  endif
+
+  assign poster_uid = 'poster'
+  if play_mode == 'upload' and uploaded_video != null
+    assign poster_uid = uploaded_video.id
+  elsif external_video != null and external_video.id != blank
+    assign poster_uid = external_video.id | append: '-' | append: external_video.type
+  endif
+
+  assign poster_button_id = 'Deferred-Poster-Modal-' | append: section.id | append: '-' | append: poster_uid
+
+  assign alt_text = 'sections.video.load_video' | t: description: description | escape
+-%}
+
+{%- if has_video -%}
+  <deferred-media
+    class="{{ media_class }} deferred-media media"
+    {% if section.settings.height == 'adapt' %}
+      {% if poster != null %}
+        style="padding-bottom: {{ 1 | divided_by: poster.aspect_ratio | times: 100 }}%;"
+      {% elsif external_poster_url != blank %}
+        style="padding-bottom: 56.25%;"
+      {% else %}
+        style="padding-bottom: {{ 1 | divided_by: ratio | times: 100 }}%;"
+      {% endif %}
+    {% endif %}
+    data-media-id="{{ section.id }}-{{ poster_uid }}"
+  >
+    <button
+      id="{{ poster_button_id }}"
+      class="deferred-media__poster media media--landscape"
+      type="button"
+      aria-label="{{ alt_text }}"
+    >
+      {%- if poster != null -%}
+        {{
+          poster
+          | image_url: width: 1500
+          | image_tag:
+            widths: '165, 360, 535, 750, 1070, 1500',
+            sizes: '(min-width: 750px) 50vw, 100vw',
+            fetchpriority: fetch_priority,
+            alt: alt_text
+        }}
+      {%- elsif external_poster_url != blank -%}
+        <img
+          src="{{ external_poster_url }}"
+          width="480"
+          height="360"
+          loading="lazy"
+          {% if fetch_priority %}fetchpriority="{{ fetch_priority }}"{% endif %}
+          alt="{{ alt_text }}"
+        >
+      {%- else -%}
+        {{ 'hero-apparel-3' | placeholder_svg_tag: 'placeholder-svg placeholder' }}
+      {%- endif -%}
+      <span class="deferred-media__poster-button motion-reduce">
+        <span class="svg-wrapper">
+          {{- 'icon-play.svg' | inline_asset_content -}}
+        </span>
+      </span>
+    </button>
+
+    <template>
+      {%- if play_mode == 'upload' -%}
+        {{
+          uploaded_video
+          | video_tag:
+            image_size: '1100x',
+            autoplay: true,
+            loop: loop_enabled,
+            controls: show_controls,
+            muted: muted
+        }}
+      {%- else -%}
+        {%- liquid
+          assign video_id = external_video.id
+          assign loop_param = ''
+          if loop_enabled
+            assign loop_param = '&loop=1'
+          endif
+        -%}
+        {%- if external_video.type == 'youtube' -%}
+          <iframe
+            src="https://www.youtube.com/embed/{{ video_id }}?enablejsapi=1&autoplay=1{{ loop_param }}{% if loop_enabled %}&playlist={{ video_id }}{% endif %}"
+            class="js-youtube"
+            allow="autoplay; encrypted-media"
+            allowfullscreen
+            title="{{ description | escape }}"
+          ></iframe>
+        {%- else -%}
+          <iframe
+            src="https://player.vimeo.com/video/{{ video_id }}?autoplay=1{{ loop_param }}"
+            class="js-vimeo"
+            allow="autoplay; encrypted-media"
+            allowfullscreen
+            title="{{ description | escape }}"
+          ></iframe>
+        {%- endif -%}
+      {%- endif -%}
+    </template>
+  </deferred-media>
+{%- else -%}
+  <div class="{{ media_class }} image-with-text__media--placeholder placeholder">
+    {{ 'hero-apparel-3' | placeholder_svg_tag: 'placeholder-svg' }}
+    {%- if request.design_mode -%}
+      <div class="image-with-text__text rte" style="padding: 1.2rem;">
+        <p><strong>Vídeo não configurado.</strong></p>
+        <p>
+          Escolha <strong>YouTube</strong> ou <strong>Vimeo</strong> e cole a URL no campo correspondente, ou escolha
+          <strong>Upload</strong> e selecione um arquivo de vídeo.
+        </p>
+      </div>
+    {%- endif -%}
+  </div>
+{%- endif -%}

@@ -234,6 +234,10 @@
     }
   },
   "templates": {
+    "404": {
+      "title": "Страница не найдена",
+      "subtext": "404"
+    },
     "search": {
       "no_results": "По запросу «{{ terms }}» ничего не найдено. Проверьте правописание или выберите другие слова либо фразу.",
       "title": "Результаты поиска",
@@ -287,10 +291,6 @@
         "error_heading": "Измените следующие элементы:",
         "title": "Форма для связи"
       }
-    },
-    "404": {
-      "title": "Страница не найдена",
-      "subtext": "404"
     }
   },
   "sections": {
@@ -406,6 +406,49 @@
       "min_error": "Минимальное количество этого товара — {{ min }}",
       "max_error": "Максимальное количество этого товара — {{ max }}",
       "step_error": "Вы можете добавить этот товар только в количестве, кратном {{ step }}"
+    },
+    "video-with-text": {
+      "name": "Video and text",
+      "settings": {
+        "header__source": "Video source",
+        "video_source": {
+          "label": "Video type",
+          "options__1": "YouTube",
+          "options__2": "Vimeo",
+          "options__3": "Upload"
+        },
+        "youtube_video_url": {
+          "label": "YouTube URL",
+          "info": "Paste a YouTube link. The theme extracts the video ID automatically."
+        },
+        "vimeo_video_url": {
+          "label": "Vimeo URL",
+          "info": "Paste a Vimeo link. The theme extracts the video ID automatically."
+        },
+        "video": {
+          "label": "Uploaded video"
+        },
+        "cover_image": {
+          "label": "Cover image (optional)",
+          "info": "Used as the poster before the video loads."
+        },
+        "description": {
+          "label": "Description",
+          "info": "Used for accessibility (video title/label)."
+        },
+        "enable_video_looping": {
+          "label": "Loop video"
+        },
+        "muted": {
+          "label": "Mute video"
+        },
+        "show_controls": {
+          "label": "Show video controls"
+        }
+      },
+      "presets": {
+        "name": "Video and text"
+      }
     }
   },
   "localization": {

@@ -9,6 +9,57 @@
  */
 {
   "sections": {
+    "video_with_text": {
+      "type": "video-with-text",
+      "blocks": {
+        "heading": {
+          "type": "video_heading",
+          "settings": {
+            "heading": "Vídeo e texto",
+            "heading_size": "h1"
+          }
+        },
+        "text": {
+          "type": "video_text",
+          "settings": {
+            "text": "<p>Use esta seção para combinar um vídeo (YouTube, Vimeo ou upload) com conteúdo textual.</p>",
+            "text_style": "body"
+          }
+        },
+        "button": {
+          "type": "video_button",
+          "settings": {
+            "button_label": "Saiba mais",
+            "button_link": "",
+            "button_style_secondary": false
+          }
+        }
+      },
+      "block_order": ["heading", "text", "button"],
+      "settings": {
+        "video_source": "upload",
+        "youtube_video_url": "",
+        "vimeo_video_url": "",
+        "video": null,
+        "cover_image": null,
+        "description": "",
+        "enable_video_looping": false,
+        "muted": true,
+        "show_controls": true,
+        "height": "adapt",
+        "desktop_video_width": "medium",
+        "layout": "image_first",
+        "video_behavior": "none",
+        "content_layout": "no-overlap",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "mobile_content_alignment": "left",
+        "section_color_scheme": "scheme-1",
+        "color_scheme": "scheme-1",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
     "image_banner": {
       "type": "image-banner",
       "blocks": {
@@ -78,6 +129,7 @@
     }
   },
   "order": [
+    "video_with_text",
     "image_banner",
     "featured_collection"
   ]

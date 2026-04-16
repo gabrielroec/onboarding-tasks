@@ -226,6 +226,10 @@
     }
   },
   "templates": {
+    "404": {
+      "title": "ページが見つかりません",
+      "subtext": "404"
+    },
     "search": {
       "no_results": "「{{ terms }}」に一致する結果は見つかりませんでした。スペルを確認するか、別の単語やフレーズを使用してください。",
       "results_with_count": {
@@ -269,10 +273,6 @@
         "error_heading": "以下を確認してください。",
         "title": "お問い合わせフォーム"
       }
-    },
-    "404": {
-      "title": "ページが見つかりません",
-      "subtext": "404"
     }
   },
   "sections": {
@@ -382,6 +382,49 @@
       "min_error": "このアイテムの最小値は{{ min }}です",
       "max_error": "このアイテムの最大値は{{ max }}です",
       "step_error": "このアイテムは、{{ step }}の増分でのみ追加できます"
+    },
+    "video-with-text": {
+      "name": "Video and text",
+      "settings": {
+        "header__source": "Video source",
+        "video_source": {
+          "label": "Video type",
+          "options__1": "YouTube",
+          "options__2": "Vimeo",
+          "options__3": "Upload"
+        },
+        "youtube_video_url": {
+          "label": "YouTube URL",
+          "info": "Paste a YouTube link. The theme extracts the video ID automatically."
+        },
+        "vimeo_video_url": {
+          "label": "Vimeo URL",
+          "info": "Paste a Vimeo link. The theme extracts the video ID automatically."
+        },
+        "video": {
+          "label": "Uploaded video"
+        },
+        "cover_image": {
+          "label": "Cover image (optional)",
+          "info": "Used as the poster before the video loads."
+        },
+        "description": {
+          "label": "Description",
+          "info": "Used for accessibility (video title/label)."
+        },
+        "enable_video_looping": {
+          "label": "Loop video"
+        },
+        "muted": {
+          "label": "Mute video"
+        },
+        "show_controls": {
+          "label": "Show video controls"
+        }
+      },
+      "presets": {
+        "name": "Video and text"
+      }
     }
   },
   "localization": {

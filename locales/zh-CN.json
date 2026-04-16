@@ -226,6 +226,10 @@
     }
   },
   "templates": {
+    "404": {
+      "title": "找不到页面",
+      "subtext": "404"
+    },
     "search": {
       "no_results": "未找到“{{ terms }}”的结果。请检查拼写或使用其他词或短语。",
       "results_with_count": {
@@ -269,10 +273,6 @@
         "error_heading": "请调整以下内容：",
         "title": "联系表"
       }
-    },
-    "404": {
-      "title": "找不到页面",
-      "subtext": "404"
     }
   },
   "sections": {
@@ -382,6 +382,49 @@
       "min_error": "此商品的最小值为 {{ min }}",
       "max_error": "此商品的最大值为 {{ max }}",
       "step_error": "您只能以 {{ step }} 为增量来添加此商品"
+    },
+    "video-with-text": {
+      "name": "Video and text",
+      "settings": {
+        "header__source": "Video source",
+        "video_source": {
+          "label": "Video type",
+          "options__1": "YouTube",
+          "options__2": "Vimeo",
+          "options__3": "Upload"
+        },
+        "youtube_video_url": {
+          "label": "YouTube URL",
+          "info": "Paste a YouTube link. The theme extracts the video ID automatically."
+        },
+        "vimeo_video_url": {
+          "label": "Vimeo URL",
+          "info": "Paste a Vimeo link. The theme extracts the video ID automatically."
+        },
+        "video": {
+          "label": "Uploaded video"
+        },
+        "cover_image": {
+          "label": "Cover image (optional)",
+          "info": "Used as the poster before the video loads."
+        },
+        "description": {
+          "label": "Description",
+          "info": "Used for accessibility (video title/label)."
+        },
+        "enable_video_looping": {
+          "label": "Loop video"
+        },
+        "muted": {
+          "label": "Mute video"
+        },
+        "show_controls": {
+          "label": "Show video controls"
+        }
+      },
+      "presets": {
+        "name": "Video and text"
+      }
     }
   },
   "localization": {

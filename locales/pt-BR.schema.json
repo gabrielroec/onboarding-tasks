@@ -1344,6 +1344,57 @@
         "name": "Imagem com texto"
       }
     },
+    "video-with-text": {
+      "name": "Vídeo e texto",
+      "settings": {
+        "header__source": {
+          "content": "Fonte do vídeo"
+        },
+        "video_source": {
+          "label": "Tipo de vídeo",
+          "options__1": {
+            "label": "YouTube"
+          },
+          "options__2": {
+            "label": "Vimeo"
+          },
+          "options__3": {
+            "label": "Upload"
+          }
+        },
+        "youtube_video_url": {
+          "label": "URL do YouTube",
+          "info": "Cole um link do YouTube. O tema extrai o ID do vídeo automaticamente."
+        },
+        "vimeo_video_url": {
+          "label": "URL do Vimeo",
+          "info": "Cole um link do Vimeo. O tema extrai o ID do vídeo automaticamente."
+        },
+        "video": {
+          "label": "Vídeo enviado (upload)"
+        },
+        "cover_image": {
+          "label": "Imagem de capa (opcional)",
+          "info": "Usada como pôster antes do vídeo carregar."
+        },
+        "description": {
+          "label": "Descrição",
+          "info": "Usada para acessibilidade (título/label do player)."
+        },
+        "enable_video_looping": {
+          "label": "Repetir vídeo (loop)"
+        },
+        "muted": {
+          "label": "Vídeo sem som (muted)"
+        },
+        "show_controls": {
+          "label": "Exibir controles do vídeo"
+        }
+      },
+      "presets": {
+        "name": "Vídeo e texto"
+      }
+    },
     "main-article": {
       "name": "Post do blog",
       "blocks": {
