@@ -1680,6 +1680,21 @@
             }
           }
         },
+        "buy_together": {
+          "name": "Compre junto (metacampo)",
+          "settings": {
+            "paragraph_metafield": {
+              "content": "Usa o metacampo do produto custom.product_recommended (referência de produto). O bloco só aparece quando o produto recomendado existe e está em estoque."
+            },
+            "heading": {
+              "label": "Título",
+              "default": "Leve os dois"
+            },
+            "text": {
+              "label": "Texto"
+            }
+          }
+        },
         "pickup_availability": {
           "name": "Disponibilidade de retirada"
         },

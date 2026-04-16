@@ -188,7 +188,9 @@
       },
       "taxes_included": "已包含稅額。",
       "duties_included": "已包含關稅。",
-      "duties_and_taxes_included": "已包含關稅和稅額。"
+      "duties_and_taxes_included": "已包含關稅和稅額。",
+      "buy_together_add_two": "Add both items to cart",
+      "buy_together_error": "We could not add both items. Please try again."
     },
     "modal": {
       "label": "媒體庫"
@@ -226,6 +228,10 @@
     }
   },
   "templates": {
+    "404": {
+      "title": "找不到頁面",
+      "subtext": "404"
+    },
     "search": {
       "no_results": "找不到與「{{ terms }}」相符的結果。請檢查拼字或使用其他字詞。",
       "results_with_count": {
@@ -269,10 +275,6 @@
         "error_heading": "請調整以下內容：",
         "title": "聯絡表單"
       }
-    },
-    "404": {
-      "title": "找不到頁面",
-      "subtext": "404"
     }
   },
   "sections": {

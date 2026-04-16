@@ -178,6 +178,8 @@
       "inventory_low_stock_show_count": "Estoque baixo: {{ quantity }} restante(s)",
       "inventory_out_of_stock": "Fora de estoque",
       "inventory_out_of_stock_continue_selling": "Em estoque",
+      "buy_together_add_two": "Adicionar os 2 itens ao Carrinho",
+      "buy_together_error": "Não foi possível adicionar os 2 itens. Tente novamente.",
       "sku": "SKU",
       "volume_pricing": {
         "title": "Preços por volume",

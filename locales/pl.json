@@ -190,7 +190,9 @@
       "product_variants": "Warianty produktów",
       "taxes_included": "Z wliczonymi podatkami.",
       "duties_included": "Z wliczonymi cłami.",
-      "duties_and_taxes_included": "Z wliczonymi cłami i podatkami."
+      "duties_and_taxes_included": "Z wliczonymi cłami i podatkami.",
+      "buy_together_add_two": "Add both items to cart",
+      "buy_together_error": "We could not add both items. Please try again."
     },
     "modal": {
       "label": "Galeria multimediów"
@@ -234,6 +236,10 @@
     }
   },
   "templates": {
+    "404": {
+      "title": "Nie znaleziono strony",
+      "subtext": "404"
+    },
     "search": {
       "no_results": "Nie znaleziono wyników dla “{{ terms }}”. Sprawdź pisownię lub użyj innego słowa lub zwrotu.",
       "page": "Strona",
@@ -287,10 +293,6 @@
         "error_heading": "Dostosuj następujące dane:",
         "title": "Formularz kontaktowy"
       }
-    },
-    "404": {
-      "title": "Nie znaleziono strony",
-      "subtext": "404"
     }
   },
   "sections": {

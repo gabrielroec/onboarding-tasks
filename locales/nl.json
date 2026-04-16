@@ -188,7 +188,9 @@
       "product_variants": "Productvarianten",
       "taxes_included": "Belastingen inbegrepen.",
       "duties_included": "Douanerechten inbegrepen.",
-      "duties_and_taxes_included": "Douanerechten en belastingen inbegrepen."
+      "duties_and_taxes_included": "Douanerechten en belastingen inbegrepen.",
+      "buy_together_add_two": "Add both items to cart",
+      "buy_together_error": "We could not add both items. Please try again."
     },
     "modal": {
       "label": "Mediagalerij"
@@ -226,6 +228,10 @@
     }
   },
   "templates": {
+    "404": {
+      "title": "Pagina niet gevonden",
+      "subtext": "404"
+    },
     "search": {
       "no_results": "Geen resultaten gevonden voor “{{ terms }}”. Controleer de spelling of gebruik een ander woord of een andere zin.",
       "results_with_count": {
@@ -269,10 +275,6 @@
         "error_heading": "Pas het volgende aan:",
         "title": "Contactformulier"
       }
-    },
-    "404": {
-      "title": "Pagina niet gevonden",
-      "subtext": "404"
     }
   },
   "sections": {

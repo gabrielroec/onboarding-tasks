@@ -189,7 +189,9 @@
       },
       "taxes_included": "Taxe incluse.",
       "duties_included": "Taxe vamale incluse.",
-      "duties_and_taxes_included": "Taxe și taxe vamale incluse."
+      "duties_and_taxes_included": "Taxe și taxe vamale incluse.",
+      "buy_together_add_two": "Add both items to cart",
+      "buy_together_error": "We could not add both items. Please try again."
     },
     "modal": {
       "label": "Galerie media"
@@ -230,6 +232,10 @@
     }
   },
   "templates": {
+    "404": {
+      "title": "Pagina nu a fost găsită",
+      "subtext": "404"
+    },
     "search": {
       "no_results": "Nu s-au găsit rezultate pentru „{{ terms }}”. Verificați ortografia sau utilizați alt cuvânt sau altă expresie.",
       "title": "Rezultatele căutării",
@@ -278,10 +284,6 @@
         "error_heading": "Vă rugăm să ajustați următoarele:",
         "title": "Formular de contact"
       }
-    },
-    "404": {
-      "title": "Pagina nu a fost găsită",
-      "subtext": "404"
     }
   },
   "sections": {

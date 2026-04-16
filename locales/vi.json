@@ -188,7 +188,9 @@
       },
       "taxes_included": "Đã bao gồm thuế.",
       "duties_included": "Đã bao gồm thuế nhập khẩu.",
-      "duties_and_taxes_included": "Đã bao gồm thuế và thuế nhập khẩu."
+      "duties_and_taxes_included": "Đã bao gồm thuế và thuế nhập khẩu.",
+      "buy_together_add_two": "Add both items to cart",
+      "buy_together_error": "We could not add both items. Please try again."
     },
     "modal": {
       "label": "Thư viện phương tiện"
@@ -226,6 +228,10 @@
     }
   },
   "templates": {
+    "404": {
+      "title": "Không tìm thấy trang",
+      "subtext": "404"
+    },
     "search": {
       "no_results": "Không tìm thấy kết quả cho \"{{ terms }}\". Kiểm tra chính tả hoặc sử dụng một từ hoặc cụm từ khác.",
       "results_with_count": {
@@ -269,10 +275,6 @@
         "error_heading": "Vui lòng điều chỉnh các mục sau:",
         "title": "Biểu mẫu liên hệ"
       }
-    },
-    "404": {
-      "title": "Không tìm thấy trang",
-      "subtext": "404"
     }
   },
   "sections": {

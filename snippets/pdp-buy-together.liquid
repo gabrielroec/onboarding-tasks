@@ -1,0 +1,123 @@
+{% comment %}
+  Funcionalidade: PDP Compre Junto
+  Descrição: exibe um produto complementar definido no metacampo custom.product_recommended e adiciona os 2 itens ao carrinho em uma ação.
+
+  Parâmetros:
+  - product: produto principal da PDP (obrigatório)
+  - block: bloco do editor (obrigatório)
+  - section: seção pai (obrigatório)
+  - product_form_id: id do formulário principal de produto (obrigatório)
+
+  Observações:
+  - Variante do produto principal: lida no clique via input [name="id"] do product_form_id (respeita a variante selecionada).
+  - Variante do produto complementar: selected_or_first_available_variant do produto recomendado (desde que esteja em estoque).
+{% endcomment %}
+
+{%- liquid
+  assign recommended_meta = product.metafields.custom.product_recommended
+  assign recommended_product = nil
+  if recommended_meta != blank and recommended_meta.value != blank
+    assign recommended_product = recommended_meta.value
+  endif
+
+  assign recommended_variant = nil
+  if recommended_product != nil
+    assign recommended_variant = recommended_product.selected_or_first_available_variant
+  endif
+
+  assign recommended_in_stock = false
+  if recommended_variant != nil
+    if recommended_variant.inventory_management == 'shopify'
+      if recommended_variant.inventory_quantity > 0
+        assign recommended_in_stock = true
+      endif
+    elsif recommended_variant.available
+      assign recommended_in_stock = true
+    endif
+  endif
+
+  assign should_render = false
+  if recommended_product != nil and recommended_variant != nil and recommended_in_stock
+    if recommended_product.id != product.id
+      assign should_render = true
+    endif
+  endif
+
+  assign block_dom_id = 'BuyTogether-' | append: section.id | append: '-' | append: block.id
+-%}
+
+{%- if should_render -%}
+  {{ 'component-buy-together.css' | asset_url | stylesheet_tag }}
+  <script src="{{ 'pdp-buy-together.js' | asset_url }}" defer="defer"></script>
+
+  <buy-together
+    id="{{ block_dom_id }}"
+    class="buy-together"
+    data-section-id="{{ section.id }}"
+    data-product-form-id="{{ product_form_id }}"
+    data-recommended-variant-id="{{ recommended_variant.id }}"
+    data-error-generic="{{ 'products.product.buy_together_error' | t | escape }}"
+    {{ block.shopify_attributes }}
+  >
+    <div class="buy-together__inner background-secondary">
+      {%- if block.settings.heading != blank -%}
+        <h2 class="buy-together__heading h4">
+          {{ block.settings.heading }}
+        </h2>
+      {%- endif -%}
+
+      {%- if block.settings.text != blank -%}
+        <div class="buy-together__text rte">
+          {{ block.settings.text }}
+        </div>
+      {%- endif -%}
+
+      <div class="buy-together__product">
+        <a class="buy-together__media media media--square" href="{{ recommended_product.url }}">
+          {%- if recommended_product.featured_media -%}
+            <img
+              srcset="
+                {%- if recommended_product.featured_media.width >= 165 -%}{{ recommended_product.featured_media | image_url: width: 165 }} 165w,{%- endif -%}
+                {%- if recommended_product.featured_media.width >= 360 -%}{{ recommended_product.featured_media | image_url: width: 360 }} 360w,{%- endif -%}
+                {%- if recommended_product.featured_media.width >= 533 -%}{{ recommended_product.featured_media | image_url: width: 533 }} 533w,{%- endif -%}
+                {%- if recommended_product.featured_media.width >= 720 -%}{{ recommended_product.featured_media | image_url: width: 720 }} 720w,{%- endif -%}
+                {%- if recommended_product.featured_media.width >= 940 -%}{{ recommended_product.featured_media | image_url: width: 940 }} 940w,{%- endif -%}
+                {{ recommended_product.featured_media | image_url }} {{ recommended_product.featured_media.width }}w
+              "
+              src="{{ recommended_product.featured_media | image_url: width: 360 }}"
+              sizes="90px"
+              alt="{{ recommended_product.featured_media.alt | default: recommended_product.title | escape }}"
+              loading="lazy"
+              width="180"
+              height="180"
+            >
+          {%- else -%}
+            {{ 'product-apparel-2' | placeholder_svg_tag: 'placeholder-svg' }}
+          {%- endif -%}
+        </a>
+
+        <div class="buy-together__details">
+          <a class="buy-together__title link" href="{{ recommended_product.url }}">
+            {{ recommended_product.title | escape }}
+          </a>
+          <div class="buy-together__price">
+            {%- render 'price', product: recommended_product, use_variant: true, show_badges: false -%}
+          </div>
+        </div>
+      </div>
+
+      <div class="buy-together__error product-form__error-message-wrapper" role="alert" hidden>
+        <span class="svg-wrapper">
+          {{- 'icon-error.svg' | inline_asset_content -}}
+        </span>
+        <span class="product-form__error-message"></span>
+      </div>
+
+      <button type="button" class="buy-together__button button button--full-width button--primary">
+        <span>{{ 'products.product.buy_together_add_two' | t }}</span>
+        {%- render 'loading-spinner' -%}
+      </button>
+    </div>
+  </buy-together>
+{%- endif -%}
+

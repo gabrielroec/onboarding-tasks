@@ -188,7 +188,9 @@
       "product_variants": "ตัวเลือกสินค้า",
       "taxes_included": "รวมภาษีแล้ว",
       "duties_included": "รวมอากรแล้ว",
-      "duties_and_taxes_included": "รวมภาษีและอากรแล้ว"
+      "duties_and_taxes_included": "รวมภาษีและอากรแล้ว",
+      "buy_together_add_two": "Add both items to cart",
+      "buy_together_error": "We could not add both items. Please try again."
     },
     "modal": {
       "label": "แกลเลอรีสื่อ"
@@ -226,6 +228,10 @@
     }
   },
   "templates": {
+    "404": {
+      "title": "ไม่พบหน้า",
+      "subtext": "404"
+    },
     "search": {
       "no_results": "ไม่พบผลลัพธ์สำหรับ “{{ terms }}” ตรวจสอบการสะกดคำหรือลองค้นหาคำอื่น",
       "results_with_count": {
@@ -269,10 +275,6 @@
         "error_heading": "โปรดแก้ไขข้อมูลดังต่อไปนี้:",
         "title": "แบบฟอร์มการติดต่อ"
       }
-    },
-    "404": {
-      "title": "ไม่พบหน้า",
-      "subtext": "404"
     }
   },
   "sections": {

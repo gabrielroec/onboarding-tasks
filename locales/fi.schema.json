@@ -2006,6 +2006,21 @@
               "label": "Varastomäärä"
             }
           }
+        },
+        "buy_together": {
+          "name": "Buy together (metafield)",
+          "settings": {
+            "paragraph_metafield": {
+              "content": "Uses the product metafield custom.product_recommended (product reference). The block only appears when the recommended product exists and is in stock."
+            },
+            "heading": {
+              "label": "Heading",
+              "default": "Take both"
+            },
+            "text": {
+              "label": "Text"
+            }
+          }
         }
       },
       "settings": {

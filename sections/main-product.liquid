@@ -485,6 +485,12 @@
                   section_id: section.id,
                   show_pickup_availability: true
                 -%}
+              {%- when 'buy_together' -%}
+                {% comment %}
+                  Funcionalidade: PDP Compre Junto
+                  Descrição: bloco de cross-sell via metacampo custom.product_recommended (adiciona os 2 itens ao carrinho em um clique).
+                {% endcomment %}
+                {% render 'pdp-buy-together', product: product, block: block, section: section, product_form_id: product_form_id %}
               {%- when 'rating' -%}
                 {%- if product.metafields.reviews.rating.value != blank -%}
                   <div class="rating-wrapper">
@@ -925,6 +931,28 @@
           "default": true,
           "label": "t:sections.main-product.blocks.buy_buttons.settings.show_gift_card_recipient.label",
           "info": "t:sections.main-product.blocks.buy_buttons.settings.show_gift_card_recipient.info"
+        }
+      ]
+    },
+    {
+      "type": "buy_together",
+      "name": "t:sections.main-product.blocks.buy_together.name",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "paragraph",
+          "content": "t:sections.main-product.blocks.buy_together.settings.paragraph_metafield.content"
+        },
+        {
+          "type": "inline_richtext",
+          "id": "heading",
+          "default": "t:sections.main-product.blocks.buy_together.settings.heading.default",
+          "label": "t:sections.main-product.blocks.buy_together.settings.heading.label"
+        },
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "t:sections.main-product.blocks.buy_together.settings.text.label"
         }
       ]
     },

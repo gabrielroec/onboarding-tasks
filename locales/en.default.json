@@ -125,6 +125,8 @@
       "inventory_low_stock_show_count": "Low stock: {{ quantity }} left",
       "inventory_out_of_stock": "Out of stock",
       "inventory_out_of_stock_continue_selling": "In stock",
+      "buy_together_add_two": "Add both items to cart",
+      "buy_together_error": "We couldn’t add both items. Please try again.",
       "sku": "SKU",
       "on_sale": "Sale",
       "product_variants": "Product variants",

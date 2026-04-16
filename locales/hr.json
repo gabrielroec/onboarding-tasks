@@ -189,7 +189,9 @@
       },
       "taxes_included": "Porezi su uključeni.",
       "duties_included": "Carina je uključena.",
-      "duties_and_taxes_included": "Carina i porezi su uključeni."
+      "duties_and_taxes_included": "Carina i porezi su uključeni.",
+      "buy_together_add_two": "Add both items to cart",
+      "buy_together_error": "We could not add both items. Please try again."
     },
     "modal": {
       "label": "Galerija medijskih zapisa"
@@ -230,6 +232,10 @@
     }
   },
   "templates": {
+    "404": {
+      "title": "Stranica nije pronađena",
+      "subtext": "404"
+    },
     "search": {
       "no_results": "Nije pronađen nijedan rezultat za „{{ terms }}”. Provjerite pravopis ili upotrijebite drugu riječ ili izraz.",
       "title": "Rezultati pretraživanja",
@@ -278,10 +284,6 @@
         "error_heading": "Prilagodite sljedeće:",
         "title": "Obrazac za kontakt"
       }
-    },
-    "404": {
-      "title": "Stranica nije pronađena",
-      "subtext": "404"
     }
   },
   "sections": {
