@@ -119,6 +119,7 @@
       "add_to_cart": "Ajouter au panier",
       "description": "Description",
       "on_sale": "Promotion",
+      "sale_percent_off": "{{ percent }}% OFF",
       "product_variants": "Variantes de produits",
       "quantity": {
         "label": "Quantité",

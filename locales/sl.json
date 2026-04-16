@@ -120,6 +120,7 @@
       "add_to_cart": "Dodaj v košarico",
       "description": "Opis",
       "on_sale": "Znižanje",
+      "sale_percent_off": "{{ percent }}% OFF",
       "product_variants": "Različice izdelka",
       "share": "Deli ta izdelek",
       "sold_out": "Razprodano",

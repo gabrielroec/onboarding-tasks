@@ -118,6 +118,7 @@
       "add_to_cart": "Legg i handlekurv",
       "description": "Beskrivelse",
       "on_sale": "Salg",
+      "sale_percent_off": "{{ percent }}% OFF",
       "quantity": {
         "label": "Antall",
         "input_label": "Antall for {{ product }}",

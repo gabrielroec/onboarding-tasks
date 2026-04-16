@@ -118,6 +118,7 @@
       "add_to_cart": "Læg i indkøbskurv",
       "description": "Beskrivelse",
       "on_sale": "Udsalg",
+      "sale_percent_off": "{{ percent }}% OFF",
       "quantity": {
         "label": "Antal",
         "input_label": "Antal for {{ product }}",

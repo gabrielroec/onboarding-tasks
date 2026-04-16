@@ -118,6 +118,7 @@
       "add_to_cart": "Προσθήκη στο καλάθι",
       "description": "Περιγραφή",
       "on_sale": "Έκπτωση",
+      "sale_percent_off": "{{ percent }}% OFF",
       "product_variants": "Παραλλαγές προϊόντος",
       "quantity": {
         "label": "Ποσότητα",

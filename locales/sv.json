@@ -118,6 +118,7 @@
       "add_to_cart": "Lägg i varukorgen",
       "description": "Beskrivning",
       "on_sale": "Rea",
+      "sale_percent_off": "{{ percent }}% OFF",
       "quantity": {
         "label": "Kvantitet",
         "input_label": "Kvantitet för {{ product }}",

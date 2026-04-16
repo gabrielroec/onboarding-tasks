@@ -118,6 +118,7 @@
       "add_to_cart": "Thêm vào giỏ hàng",
       "description": "Mô tả",
       "on_sale": "Giảm giá",
+      "sale_percent_off": "{{ percent }}% OFF",
       "product_variants": "Mẫu mã sản phẩm",
       "quantity": {
         "label": "Số lượng",

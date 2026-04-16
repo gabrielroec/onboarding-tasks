@@ -118,6 +118,7 @@
       "add_to_cart": "Hozzáadás a kosárhoz",
       "description": "Leírás",
       "on_sale": "Akciós",
+      "sale_percent_off": "{{ percent }}% OFF",
       "product_variants": "Termékváltozatok",
       "quantity": {
         "label": "Mennyiség",

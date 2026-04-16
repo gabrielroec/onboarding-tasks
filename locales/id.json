@@ -118,6 +118,7 @@
       "add_to_cart": "Tambahkan ke keranjang",
       "description": "Deskripsi",
       "on_sale": "Obral",
+      "sale_percent_off": "{{ percent }}% OFF",
       "product_variants": "Varian produk",
       "quantity": {
         "label": "Jumlah",

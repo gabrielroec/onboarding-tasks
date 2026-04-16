@@ -118,6 +118,7 @@
       "add_to_cart": "Aan winkelwagen toevoegen",
       "description": "Beschrijving",
       "on_sale": "Aanbieding",
+      "sale_percent_off": "{{ percent }}% OFF",
       "quantity": {
         "label": "Aantal",
         "input_label": "Aantal voor {{ product }}",

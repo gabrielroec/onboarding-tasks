@@ -119,6 +119,7 @@
       "add_to_cart": "Aggiungi al carrello",
       "description": "Descrizione",
       "on_sale": "In offerta",
+      "sale_percent_off": "{{ percent }}% OFF",
       "quantity": {
         "label": "Quantità",
         "input_label": "Quantità per {{ product }}",

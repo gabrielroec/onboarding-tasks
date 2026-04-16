@@ -118,6 +118,7 @@
       "add_to_cart": "加入購物車",
       "description": "說明",
       "on_sale": "特價",
+      "sale_percent_off": "{{ percent }}% OFF",
       "product_variants": "產品子類",
       "quantity": {
         "label": "數量",

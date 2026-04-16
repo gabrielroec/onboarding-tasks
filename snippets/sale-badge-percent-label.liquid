@@ -1,0 +1,25 @@
+{% comment %}
+  Funcionalidade: badge de promoção com percentual de desconto (% OFF)
+  Descrição: Calcula ((compare_at_price - price) / compare_at_price) * 100 com arredondamento ao inteiro mais próximo
+  (metade da base somada ao numerador antes da divisão inteira) e devolve a tradução `products.product.sale_percent_off`.
+  Parâmetros:
+    - compare_at_price: preço de comparação em centimos (ex.: variant ou produto)
+    - price: preço atual em centimos
+  Fallback: se os valores forem inválidos, devolve o texto clássico `products.product.on_sale`.
+{% endcomment %}
+{%- liquid
+  assign discount_percent = 0
+  if compare_at_price != blank and price != blank and compare_at_price > 0 and compare_at_price > price
+    assign diff_cents = compare_at_price | minus: price
+    assign numerator = diff_cents | times: 100 | plus: compare_at_price | divided_by: 2
+    assign discount_percent = numerator | divided_by: compare_at_price
+    if discount_percent < 1
+      assign discount_percent = 1
+    endif
+  endif
+-%}
+{%- if discount_percent > 0 -%}
+  {{- 'products.product.sale_percent_off' | t: percent: discount_percent -}}
+{%- else -%}
+  {{- 'products.product.on_sale' | t -}}
+{%- endif -%}

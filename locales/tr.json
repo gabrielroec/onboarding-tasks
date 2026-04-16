@@ -118,6 +118,7 @@
       "add_to_cart": "Sepete ekle",
       "description": "Açıklama",
       "on_sale": "İndirim",
+      "sale_percent_off": "{{ percent }}% OFF",
       "quantity": {
         "label": "Adet",
         "input_label": "{{ product }} için adet",

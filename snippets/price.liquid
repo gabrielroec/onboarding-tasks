@@ -113,8 +113,9 @@
       {%- endif -%}
     </div>
     {%- if show_badges -%}
+      {% comment %} Funcionalidade: badge de promoção com % OFF (PDP / price snippet — usa compare_at_price e price do target, reage à variante via recarregamento da secção) {% endcomment %}
       <span class="badge price__badge-sale color-{{ settings.sale_badge_color_scheme }}">
-        {{ 'products.product.on_sale' | t }}
+        {%- render 'sale-badge-percent-label', compare_at_price: compare_at_price, price: price -%}
       </span>
 
       <span class="badge price__badge-sold-out color-{{ settings.sold_out_badge_color_scheme }}">

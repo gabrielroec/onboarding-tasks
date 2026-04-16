@@ -118,6 +118,7 @@
       "add_to_cart": "Добавяне към количката",
       "description": "Описание",
       "on_sale": "Разпродажба",
+      "sale_percent_off": "{{ percent }}% OFF",
       "quantity": {
         "label": "Количество",
         "input_label": "Количество за {{ product }}",
