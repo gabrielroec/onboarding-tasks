@@ -118,6 +118,7 @@
       "add_to_cart": "Sepete ekle",
       "description": "Açıklama",
       "on_sale": "İndirim",
+      "pix_price_html": "{{ price }} on PIX (save {{ percent }}%)",
       "quantity": {
         "label": "Adet",
         "input_label": "{{ product }} için adet",

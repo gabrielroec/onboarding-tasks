@@ -118,6 +118,7 @@
       "add_to_cart": "Lägg i varukorgen",
       "description": "Beskrivning",
       "on_sale": "Rea",
+      "pix_price_html": "{{ price }} on PIX (save {{ percent }}%)",
       "quantity": {
         "label": "Kvantitet",
         "input_label": "Kvantitet för {{ product }}",

@@ -119,6 +119,7 @@
       "add_to_cart": "Agregar al carrito",
       "description": "Descripción",
       "on_sale": "Oferta",
+      "pix_price_html": "{{ price }} on PIX (save {{ percent }}%)",
       "quantity": {
         "label": "Cantidad",
         "input_label": "Cantidad para {{ product }}",

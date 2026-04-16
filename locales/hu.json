@@ -118,6 +118,7 @@
       "add_to_cart": "Hozzáadás a kosárhoz",
       "description": "Leírás",
       "on_sale": "Akciós",
+      "pix_price_html": "{{ price }} on PIX (save {{ percent }}%)",
       "product_variants": "Termékváltozatok",
       "quantity": {
         "label": "Mennyiség",

@@ -1400,6 +1400,36 @@
     ]
   },
   {
+    "name": "t:settings_schema.pix_discount.name",
+    "settings": [
+      {
+        "type": "header",
+        "content": "t:settings_schema.pix_discount.settings.header.content"
+      },
+      {
+        "type": "paragraph",
+        "content": "t:settings_schema.pix_discount.settings.paragraph.content"
+      },
+      {
+        "type": "checkbox",
+        "id": "pix_discount_enabled",
+        "default": false,
+        "label": "t:settings_schema.pix_discount.settings.enable.label"
+      },
+      {
+        "type": "range",
+        "id": "pix_discount_percent",
+        "min": 0,
+        "max": 50,
+        "step": 1,
+        "unit": "%",
+        "default": 5,
+        "label": "t:settings_schema.pix_discount.settings.percent.label",
+        "info": "t:settings_schema.pix_discount.settings.percent.info"
+      }
+    ]
+  },
+  {
     "name": "t:settings_schema.cart.name",
     "settings": [
       {

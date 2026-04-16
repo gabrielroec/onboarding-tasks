@@ -112,6 +112,24 @@
         "paragraph": "Prijzen in winkelwagen en bij checkout tonen altijd de valutacodes"
       }
     },
+    "pix_discount": {
+      "name": "PIX discount price",
+      "settings": {
+        "header": {
+          "content": "PIX (Brazil)"
+        },
+        "paragraph": {
+          "content": "Shows an extra line with an estimated price if customers pay with PIX, using the percentage below. Does not change cart or checkout totals."
+        },
+        "enable": {
+          "label": "Show PIX discounted price on product prices"
+        },
+        "percent": {
+          "label": "PIX discount percentage",
+          "info": "Applied to the displayed product or variant price. Hidden when set to 0 or when volume pricing is active."
+        }
+      }
+    },
     "layout": {
       "name": "Opmaak",
       "settings": {

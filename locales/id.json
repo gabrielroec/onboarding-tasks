@@ -118,6 +118,7 @@
       "add_to_cart": "Tambahkan ke keranjang",
       "description": "Deskripsi",
       "on_sale": "Obral",
+      "pix_price_html": "{{ price }} on PIX (save {{ percent }}%)",
       "product_variants": "Varian produk",
       "quantity": {
         "label": "Jumlah",

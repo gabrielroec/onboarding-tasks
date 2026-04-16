@@ -118,6 +118,7 @@
       "add_to_cart": "加入購物車",
       "description": "說明",
       "on_sale": "特價",
+      "pix_price_html": "{{ price }} on PIX (save {{ percent }}%)",
       "product_variants": "產品子類",
       "quantity": {
         "label": "數量",

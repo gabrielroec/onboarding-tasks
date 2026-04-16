@@ -118,6 +118,7 @@
       "add_to_cart": "Добавяне към количката",
       "description": "Описание",
       "on_sale": "Разпродажба",
+      "pix_price_html": "{{ price }} on PIX (save {{ percent }}%)",
       "quantity": {
         "label": "Количество",
         "input_label": "Количество за {{ product }}",

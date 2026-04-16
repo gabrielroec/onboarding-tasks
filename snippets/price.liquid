@@ -112,6 +112,13 @@
         {% render 'unit-price', price: product.selected_or_first_available_variant.unit_price, measurement: product.selected_or_first_available_variant.unit_price_measurement %}
       {%- endif -%}
     </div>
+    {% comment %}
+      Feature: PIX Discount Display
+      Description: Complemento ao preço Dawn; mostra linha de preço estimado no PIX (config global). Na PDP acompanha a variante quando o HTML do bloco de preço é atualizado.
+    {% endcomment %}
+    {%- if product != blank -%}
+      {%- render 'pix-price-note', price: price, available: available, product: product -%}
+    {%- endif -%}
     {%- if show_badges -%}
       <span class="badge price__badge-sale color-{{ settings.sale_badge_color_scheme }}">
         {{ 'products.product.on_sale' | t }}

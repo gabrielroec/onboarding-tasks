@@ -118,6 +118,7 @@
       "add_to_cart": "Lisää ostoskoriin",
       "description": "Kuvaus",
       "on_sale": "Alennusmyynti",
+      "pix_price_html": "{{ price }} on PIX (save {{ percent }}%)",
       "quantity": {
         "label": "Määrä",
         "input_label": "Tuotteen {{ product }} määrä",

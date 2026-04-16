@@ -119,6 +119,7 @@
       "add_to_cart": "Ajouter au panier",
       "description": "Description",
       "on_sale": "Promotion",
+      "pix_price_html": "{{ price }} on PIX (save {{ percent }}%)",
       "product_variants": "Variantes de produits",
       "quantity": {
         "label": "Quantité",

@@ -120,6 +120,7 @@
       "add_to_cart": "Добавить в корзину",
       "description": "Описание",
       "on_sale": "Распродажа",
+      "pix_price_html": "{{ price }} on PIX (save {{ percent }}%)",
       "share": "Поделиться этим продуктом",
       "sold_out": "Продано",
       "unavailable": "Недоступно",

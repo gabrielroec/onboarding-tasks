@@ -112,6 +112,24 @@
         "paragraph": "Os preços do carrinho e do checkout sempre mostram os códigos de moeda"
       }
     },
+    "pix_discount": {
+      "name": "Preço com desconto PIX",
+      "settings": {
+        "header": {
+          "content": "PIX (Brasil)"
+        },
+        "paragraph": {
+          "content": "Mostra uma linha extra com preço estimado para pagamento via PIX, conforme a percentagem abaixo. Não altera totais do carrinho nem do checkout."
+        },
+        "enable": {
+          "label": "Mostrar preço com desconto PIX nos preços de produto"
+        },
+        "percent": {
+          "label": "Percentagem de desconto PIX",
+          "info": "Aplicada ao preço do produto ou variante mostrado. Oculto em 0% ou com preços por volume ativos."
+        }
+      }
+    },
     "layout": {
       "name": "Layout",
       "settings": {

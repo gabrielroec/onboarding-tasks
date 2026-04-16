@@ -118,6 +118,7 @@
       "add_to_cart": "เพิ่มลงในตะกร้าสินค้า",
       "description": "คำอธิบาย",
       "on_sale": "ลดราคา",
+      "pix_price_html": "{{ price }} on PIX (save {{ percent }}%)",
       "quantity": {
         "label": "ปริมาณ",
         "input_label": "ปริมาณสำหรับ {{ product }}",

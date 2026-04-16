@@ -118,6 +118,7 @@
       "add_to_cart": "カートに追加する",
       "description": "商品説明",
       "on_sale": "セール",
+      "pix_price_html": "{{ price }} on PIX (save {{ percent }}%)",
       "product_variants": "商品バリエーション",
       "quantity": {
         "label": "数量",

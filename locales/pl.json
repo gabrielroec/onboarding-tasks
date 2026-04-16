@@ -120,6 +120,7 @@
       "add_to_cart": "Dodaj do koszyka",
       "description": "Opis",
       "on_sale": "W promocji",
+      "pix_price_html": "{{ price }} on PIX (save {{ percent }}%)",
       "share": "Udostępnij ten produkt",
       "sold_out": "Wyprzedane",
       "unavailable": "Niedostępny",

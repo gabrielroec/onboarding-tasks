@@ -1,0 +1,38 @@
+{% comment %}
+  Feature: PIX Discount Display
+  Description: Lê `settings.pix_discount_*` e exibe o valor com desconto sobre o mesmo `price` do snippet `price`
+  (variante na PDP com use_variant; no card, o mesmo alvo que o preço principal do Dawn).
+  Params: price (cents), available (bool), product (object).
+  Arredondamento: desconto em centavos = round_half_up(price * percent / 100) via (price * percent + 50) | divided_by: 100;
+  preço PIX = price - desconto (mínimo 0).
+{% endcomment %}
+
+{%- liquid
+  assign show_pix_line = false
+  if settings.pix_discount_enabled and settings.pix_discount_percent > 0 and price != blank and price > 0 and available and product != blank
+    unless product.quantity_price_breaks_configured?
+      assign show_pix_line = true
+    endunless
+  endif
+-%}
+
+{%- if show_pix_line -%}
+  {%- liquid
+    assign pct = settings.pix_discount_percent
+    assign discount_cents = price | times: pct | plus: 50 | divided_by: 100
+    assign pix_cents = price | minus: discount_cents
+    if pix_cents < 0
+      assign pix_cents = 0
+    endif
+    if settings.currency_code_enabled
+      assign pix_money = pix_cents | money_with_currency
+    else
+      assign pix_money = pix_cents | money
+    endif
+  -%}
+  <div class="pix-price-note caption" role="note">
+    <span class="pix-price-note__text">
+      {{- 'products.product.pix_price_html' | t: price: pix_money, percent: pct -}}
+    </span>
+  </div>
+{%- endif -%}
