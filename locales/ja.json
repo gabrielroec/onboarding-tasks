@@ -106,7 +106,10 @@
       "back_to_blog": "ブログに戻る",
       "share": "この記事を共有する",
       "success": "コメントが投稿されました。ありがとうございます。",
-      "success_moderated": "コメントが投稿されました。ブログが管理されているため、しばらくしてから公開されます。"
+      "success_moderated": "コメントが投稿されました。ブログが管理されているため、しばらくしてから公開されます。",
+      "related_products_list": "Related products from this article",
+      "related_products_editor_title": "Related products (metafield)",
+      "related_products_editor_body": "Add products in the article metafield custom.related_products (list of product references, up to 4 shown). This hint only appears in the theme editor."
     }
   },
   "onboarding": {
@@ -226,6 +229,10 @@
     }
   },
   "templates": {
+    "404": {
+      "title": "ページが見つかりません",
+      "subtext": "404"
+    },
     "search": {
       "no_results": "「{{ terms }}」に一致する結果は見つかりませんでした。スペルを確認するか、別の単語やフレーズを使用してください。",
       "results_with_count": {
@@ -269,10 +276,6 @@
         "error_heading": "以下を確認してください。",
         "title": "お問い合わせフォーム"
       }
-    },
-    "404": {
-      "title": "ページが見つかりません",
-      "subtext": "404"
     }
   },
   "sections": {

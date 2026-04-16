@@ -106,7 +106,10 @@
       "back_to_blog": "Back to blog",
       "share": "Share this article",
       "success": "Your comment was posted successfully! Thank you!",
-      "success_moderated": "Your comment was posted successfully. We will publish it in a little while, as our blog is moderated."
+      "success_moderated": "Your comment was posted successfully. We will publish it in a little while, as our blog is moderated.",
+      "related_products_list": "Related products from this article",
+      "related_products_editor_title": "Related products (metafield)",
+      "related_products_editor_body": "Add products in the article metafield custom.related_products (list of product references, up to 4 shown). This hint only appears in the theme editor."
     }
   },
   "onboarding": {

@@ -107,7 +107,10 @@
         "one": "{{ count }} comentariu",
         "other": "{{ count }} comentarii",
         "few": "{{ count }} comentarii"
-      }
+      },
+      "related_products_list": "Related products from this article",
+      "related_products_editor_title": "Related products (metafield)",
+      "related_products_editor_body": "Add products in the article metafield custom.related_products (list of product references, up to 4 shown). This hint only appears in the theme editor."
     }
   },
   "onboarding": {
@@ -230,6 +233,10 @@
     }
   },
   "templates": {
+    "404": {
+      "title": "Pagina nu a fost găsită",
+      "subtext": "404"
+    },
     "search": {
       "no_results": "Nu s-au găsit rezultate pentru „{{ terms }}”. Verificați ortografia sau utilizați alt cuvânt sau altă expresie.",
       "title": "Rezultatele căutării",
@@ -278,10 +285,6 @@
         "error_heading": "Vă rugăm să ajustați următoarele:",
         "title": "Formular de contact"
       }
-    },
-    "404": {
-      "title": "Pagina nu a fost găsită",
-      "subtext": "404"
     }
   },
   "sections": {

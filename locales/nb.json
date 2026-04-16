@@ -106,7 +106,10 @@
       "back_to_blog": "Tilbake til bloggen",
       "share": "Del denne artikkelen",
       "success": "Kommentaren din ble delt! Takk!",
-      "success_moderated": "Kommentaren din ble delt. Vi publiserer den om en liten stund, siden bloggen din er moderert."
+      "success_moderated": "Kommentaren din ble delt. Vi publiserer den om en liten stund, siden bloggen din er moderert.",
+      "related_products_list": "Related products from this article",
+      "related_products_editor_title": "Related products (metafield)",
+      "related_products_editor_body": "Add products in the article metafield custom.related_products (list of product references, up to 4 shown). This hint only appears in the theme editor."
     }
   },
   "onboarding": {
@@ -226,6 +229,10 @@
     }
   },
   "templates": {
+    "404": {
+      "title": "Siden finnes ikke",
+      "subtext": "404"
+    },
     "search": {
       "no_results": "Fant ingen resultater for «{{ terms }}». Kontroller stavemåten, eller bruk et annet ord.",
       "page": "Side",
@@ -269,10 +276,6 @@
         "error_heading": "Juster følgende:",
         "title": "Kontaktskjema"
       }
-    },
-    "404": {
-      "title": "Siden finnes ikke",
-      "subtext": "404"
     }
   },
   "sections": {

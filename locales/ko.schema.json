@@ -1389,6 +1389,45 @@
               "default": "공유"
             }
           }
+        },
+        "related_products": {
+          "name": "Related products (metafield)",
+          "settings": {
+            "paragraph_metafield": {
+              "content": "Products come from the article metafield custom.related_products (list of product references). Up to 4 products are shown. Create the metafield in Settings > Custom data > Blog posts if it does not exist."
+            },
+            "header_text": {
+              "content": "Heading"
+            },
+            "heading": {
+              "label": "Heading",
+              "default": "Shop the story"
+            },
+            "subtitle": {
+              "label": "Subtitle"
+            },
+            "header_layout": {
+              "content": "Layout"
+            },
+            "layout_desktop": {
+              "label": "Desktop layout",
+              "options__1": {
+                "label": "Grid"
+              },
+              "options__2": {
+                "label": "Carousel"
+              }
+            },
+            "layout_mobile": {
+              "label": "Mobile layout",
+              "options__1": {
+                "label": "Grid"
+              },
+              "options__2": {
+                "label": "Carousel"
+              }
+            }
+          }
         }
       }
     },

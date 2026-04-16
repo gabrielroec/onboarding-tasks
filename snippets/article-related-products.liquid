@@ -1,0 +1,217 @@
+{% comment %}
+  Funcionalidade: produtos relacionados no blog via metacampo
+  Descrição: lê até 4 produtos em article.metafields.custom.related_products (lista de referências).
+  O metacampo deve existir no Admin (Configurações → Dados personalizados → Posts do blog); o tema não cria metacampos.
+
+  Parâmetros:
+  - article: objeto do artigo atual (obrigatório)
+  - block: bloco da secção com opções de layout/cartão (obrigatório)
+  - section: secção pai (obrigatório; usado em section_id do card-product)
+
+  Visibilidade:
+  - Loja: só há markup com pelo menos um produto válido (máx. 4).
+  - Editor de tema: aviso se o bloco existir mas o metacampo estiver vazio.
+
+  Carrossel: igual ao padrão Dawn (featured-collection) — slider-component, classes slider / slider--desktop / slider--tablet.
+{% endcomment %}
+
+{%- liquid
+  assign related_meta = article.metafields.custom.related_products
+  assign rp_value = nil
+  if related_meta != blank
+    assign rp_value = related_meta.value
+  endif
+
+  assign valid_product_count = 0
+  if rp_value != blank
+    for product in rp_value
+      if valid_product_count >= 4
+        break
+      endif
+      unless product == blank
+        assign valid_product_count = valid_product_count | plus: 1
+      endunless
+    endfor
+  endif
+
+  assign show_products = false
+  if valid_product_count > 0
+    assign show_products = true
+  endif
+
+  assign show_editor_placeholder = false
+  if request.design_mode and show_products == false
+    assign show_editor_placeholder = true
+  endif
+
+  assign card_section_id = section.id | append: '--' | append: block.id
+
+  assign columns_desktop_int = block.settings.columns_desktop | plus: 0
+  assign columns_mobile_int = block.settings.columns_mobile | plus: 0
+
+  assign show_mobile_slider = false
+  if block.settings.layout_mobile == 'carousel' and valid_product_count > columns_mobile_int
+    assign show_mobile_slider = true
+  endif
+
+  assign show_desktop_slider = false
+  if block.settings.layout_desktop == 'carousel' and valid_product_count > columns_desktop_int
+    assign show_desktop_slider = true
+  endif
+
+  assign max_columns_to_show = columns_mobile_int
+  if columns_desktop_int > columns_mobile_int
+    assign max_columns_to_show = columns_desktop_int
+  endif
+
+  assign slider_dom_id = 'Slider-ArticleRelated-' | append: section.id | append: '-' | append: block.id
+-%}
+
+{%- if show_products or show_editor_placeholder -%}
+  {%- style -%}
+    .article-related-products--{{ block.id }} {
+      padding-top: {{ block.settings.padding_top | times: 0.75 | round: 0 }}px;
+      padding-bottom: {{ block.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+    }
+    @media screen and (min-width: 750px) {
+      .article-related-products--{{ block.id }} {
+        padding-top: {{ block.settings.padding_top }}px;
+        padding-bottom: {{ block.settings.padding_bottom }}px;
+      }
+    }
+  {%- endstyle -%}
+
+  <section
+    class="article-related-products article-related-products--{{ block.id }} element-margin-top color-{{ block.settings.color_scheme }} gradient isolate"
+    {{ block.shopify_attributes }}
+  >
+    <div class="page-width">
+      {%- if show_products -%}
+        <div class="collection collection--full-width">
+          <div
+            class="collection__title title-wrapper title-wrapper--no-top-margin{% if show_mobile_slider %} title-wrapper--self-padded-tablet-down{% endif %}{% if show_desktop_slider %} collection__title--desktop-slider{% endif %}"
+          >
+            {%- if block.settings.heading != blank -%}
+              <h2
+                id="ArticleRelatedProductsHeading--{{ block.id }}"
+                class="title inline-richtext {{ block.settings.heading_size }}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+              >
+                {{ block.settings.heading }}
+              </h2>
+            {%- endif -%}
+            {%- if block.settings.subtitle != blank -%}
+              <div class="collection__description {{ block.settings.subtitle_style }} rte{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
+                {{ block.settings.subtitle }}
+              </div>
+            {%- endif -%}
+          </div>
+
+          <slider-component
+            class="slider-mobile-gutter{% if show_mobile_slider == false %} page-width{% endif %}{% if show_desktop_slider == false %} page-width-desktop{% endif %}{% if show_desktop_slider %} slider-component-desktop{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+            data-id="{{ block.id }}"
+          >
+            <ul
+              id="{{ slider_dom_id }}"
+              class="grid product-grid contains-card contains-card--product{% if settings.card_style == 'standard' %} contains-card--standard{% endif %} grid--{{ block.settings.columns_desktop }}-col-desktop grid--{{ block.settings.columns_mobile }}-col-tablet-down{% if show_mobile_slider or show_desktop_slider %} slider{% if show_desktop_slider %} slider--desktop{% endif %}{% if show_mobile_slider %} slider--tablet grid--peek{% endif %}{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+              role="list"
+              {% if show_mobile_slider or show_desktop_slider %}
+                aria-label="{{ 'general.slider.name' | t }}"
+              {% elsif block.settings.heading != blank %}
+                aria-labelledby="ArticleRelatedProductsHeading--{{ block.id }}"
+              {% else %}
+                aria-label="{{ 'blogs.article.related_products_list' | t | escape }}"
+              {% endif %}
+            >
+              {%- assign skip_card_product_styles = false -%}
+              {%- assign rendered = 0 -%}
+              {%- for product in rp_value -%}
+                {%- if rendered >= 4 -%}
+                  {%- break -%}
+                {%- endif -%}
+                {%- if product == blank -%}
+                  {%- continue -%}
+                {%- endif -%}
+
+                {%- liquid
+                  assign lazy_load = false
+                  if rendered >= max_columns_to_show
+                    assign lazy_load = true
+                  endif
+                -%}
+
+                <li
+                  id="Slide-ArticleRelated-{{ section.id }}-{{ block.id }}-{{ rendered | plus: 1 }}"
+                  class="grid__item{% if show_mobile_slider or show_desktop_slider %} slider__slide{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+                  {% if settings.animations_reveal_on_scroll %}
+                    data-cascade
+                    style="--animation-order: {{ rendered | plus: 1 }};"
+                  {% endif %}
+                >
+                  {% render 'card-product',
+                    card_product: product,
+                    media_aspect_ratio: block.settings.image_ratio,
+                    image_shape: block.settings.image_shape,
+                    lazy_load: lazy_load,
+                    show_secondary_image: block.settings.show_secondary_image,
+                    show_vendor: block.settings.show_vendor,
+                    show_rating: block.settings.show_rating,
+                    skip_styles: skip_card_product_styles,
+                    section_id: card_section_id,
+                    quick_add: block.settings.quick_add
+                  %}
+                </li>
+                {%- assign skip_card_product_styles = true -%}
+                {%- assign rendered = rendered | plus: 1 -%}
+              {%- endfor -%}
+            </ul>
+
+            {%- if show_mobile_slider or show_desktop_slider -%}
+              <div class="slider-buttons">
+                <button
+                  type="button"
+                  class="slider-button slider-button--prev"
+                  name="previous"
+                  aria-label="{{ 'general.slider.previous_slide' | t }}"
+                  aria-controls="{{ slider_dom_id }}"
+                >
+                  <span class="svg-wrapper">
+                    {{- 'icon-caret.svg' | inline_asset_content -}}
+                  </span>
+                </button>
+                <div class="slider-counter caption">
+                  <span class="slider-counter--current">1</span>
+                  <span aria-hidden="true"> / </span>
+                  <span class="visually-hidden">{{ 'general.slider.of' | t }}</span>
+                  <span class="slider-counter--total">{{ valid_product_count }}</span>
+                </div>
+                <button
+                  type="button"
+                  class="slider-button slider-button--next"
+                  name="next"
+                  aria-label="{{ 'general.slider.next_slide' | t }}"
+                  aria-controls="{{ slider_dom_id }}"
+                >
+                  <span class="svg-wrapper">
+                    {{- 'icon-caret.svg' | inline_asset_content -}}
+                  </span>
+                </button>
+              </div>
+            {%- endif -%}
+          </slider-component>
+
+          {%- if block.settings.image_shape == 'arch' -%}
+            {{ 'mask-arch.svg' | inline_asset_content }}
+          {%- endif -%}
+        </div>
+      {%- elsif show_editor_placeholder -%}
+        <div
+          class="article-related-products__editor-hint rte"
+          style="padding: 1.5rem; border: 0.1rem dashed rgba(var(--color-foreground), 0.2); border-radius: var(--media-radius);"
+        >
+          <p><strong>{{ 'blogs.article.related_products_editor_title' | t }}</strong></p>
+          <p>{{ 'blogs.article.related_products_editor_body' | t }}</p>
+        </div>
+      {%- endif -%}
+    </div>
+  </section>
+{%- endif -%}

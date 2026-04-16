@@ -1389,6 +1389,45 @@
               "default": "Compartilhar"
             }
           }
+        },
+        "related_products": {
+          "name": "Produtos relacionados (metacampo)",
+          "settings": {
+            "paragraph_metafield": {
+              "content": "Os produtos vêm do metacampo do artigo custom.related_products (lista de referências de produto). São exibidos no máximo 4 produtos. Crie o metacampo em Configurações → Dados personalizados → Posts do blog se ainda não existir."
+            },
+            "header_text": {
+              "content": "Título"
+            },
+            "heading": {
+              "label": "Título",
+              "default": "Compre a história"
+            },
+            "subtitle": {
+              "label": "Subtítulo"
+            },
+            "header_layout": {
+              "content": "Layout"
+            },
+            "layout_desktop": {
+              "label": "Layout no desktop",
+              "options__1": {
+                "label": "Grade"
+              },
+              "options__2": {
+                "label": "Carrossel"
+              }
+            },
+            "layout_mobile": {
+              "label": "Layout no mobile",
+              "options__1": {
+                "label": "Grade"
+              },
+              "options__2": {
+                "label": "Carrossel"
+              }
+            }
+          }
         }
       }
     },

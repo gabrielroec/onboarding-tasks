@@ -107,7 +107,10 @@
       "back_to_blog": "Voltar para o blog",
       "share": "Compartilhar este artigo",
       "success": "O comentário foi postado. Obrigado!",
-      "success_moderated": "O comentário foi postado. Nós o publicaremos em breve, pois o blog é moderado."
+      "success_moderated": "O comentário foi postado. Nós o publicaremos em breve, pois o blog é moderado.",
+      "related_products_list": "Produtos relacionados a este artigo",
+      "related_products_editor_title": "Produtos relacionados (metacampo)",
+      "related_products_editor_body": "Adicione produtos no metacampo do artigo custom.related_products (lista de referências de produto; até 4 são exibidos). Esta mensagem aparece apenas no editor de tema."
     }
   },
   "onboarding": {

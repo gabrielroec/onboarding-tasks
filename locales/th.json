@@ -106,7 +106,10 @@
       "back_to_blog": "กลับไปยังบล็อก",
       "share": "แชร์บทความนี้",
       "success": "โพสต์ความคิดเห็นของคุณเรียบร้อยแล้ว! ขอบคุณ!",
-      "success_moderated": "โพสต์ความคิดเห็นของคุณเรียบร้อยแล้ว เนื่องจากบล็อกของเราอยู่ในระหว่างการตรวจสอบ เราจะเผยแพร่ความคิดเห็นของคุณในอีกสักครู่"
+      "success_moderated": "โพสต์ความคิดเห็นของคุณเรียบร้อยแล้ว เนื่องจากบล็อกของเราอยู่ในระหว่างการตรวจสอบ เราจะเผยแพร่ความคิดเห็นของคุณในอีกสักครู่",
+      "related_products_list": "Related products from this article",
+      "related_products_editor_title": "Related products (metafield)",
+      "related_products_editor_body": "Add products in the article metafield custom.related_products (list of product references, up to 4 shown). This hint only appears in the theme editor."
     }
   },
   "onboarding": {
@@ -226,6 +229,10 @@
     }
   },
   "templates": {
+    "404": {
+      "title": "ไม่พบหน้า",
+      "subtext": "404"
+    },
     "search": {
       "no_results": "ไม่พบผลลัพธ์สำหรับ “{{ terms }}” ตรวจสอบการสะกดคำหรือลองค้นหาคำอื่น",
       "results_with_count": {
@@ -269,10 +276,6 @@
         "error_heading": "โปรดแก้ไขข้อมูลดังต่อไปนี้:",
         "title": "แบบฟอร์มการติดต่อ"
       }
-    },
-    "404": {
-      "title": "ไม่พบหน้า",
-      "subtext": "404"
     }
   },
   "sections": {

@@ -106,7 +106,10 @@
       "back_to_blog": "返回網誌",
       "share": "分享此文章",
       "success": "您已成功留言！感謝您！",
-      "success_moderated": "您已成功留言。由於我們的網誌有人管理，因此過一段時間後才會進行發布。"
+      "success_moderated": "您已成功留言。由於我們的網誌有人管理，因此過一段時間後才會進行發布。",
+      "related_products_list": "Related products from this article",
+      "related_products_editor_title": "Related products (metafield)",
+      "related_products_editor_body": "Add products in the article metafield custom.related_products (list of product references, up to 4 shown). This hint only appears in the theme editor."
     }
   },
   "onboarding": {
@@ -226,6 +229,10 @@
     }
   },
   "templates": {
+    "404": {
+      "title": "找不到頁面",
+      "subtext": "404"
+    },
     "search": {
       "no_results": "找不到與「{{ terms }}」相符的結果。請檢查拼字或使用其他字詞。",
       "results_with_count": {
@@ -269,10 +276,6 @@
         "error_heading": "請調整以下內容：",
         "title": "聯絡表單"
       }
-    },
-    "404": {
-      "title": "找不到頁面",
-      "subtext": "404"
     }
   },
   "sections": {
