@@ -49,6 +49,10 @@
         "enable_country_selector": true,
         "enable_language_selector": true,
         "enable_customer_avatar": true,
+        "exclusive_customer_tag_nav_enabled": false,
+        "exclusive_customer_tag_nav_tag": "",
+        "exclusive_customer_tag_nav_title": "",
+        "exclusive_customer_tag_nav_collection": "",
         "margin_bottom": 0,
         "padding_top": 20,
         "padding_bottom": 20

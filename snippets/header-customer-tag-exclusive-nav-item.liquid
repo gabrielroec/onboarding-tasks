@@ -1,0 +1,64 @@
+{% comment %}
+  Feature: Exclusive Collection Menu Item by Customer Tag
+  Description: Appends one top-level navigation item when the logged-in customer has a configured tag and a collection is selected.
+  Params:
+    - layout: "inline" (dropdown / mega desktop) or "drawer" (menu drawer)
+  Depends on: section (header) settings; global customer object.
+{% endcomment %}
+
+{%- liquid
+  assign exclusive_nav_show = false
+  assign exclusive_collection = section.settings.exclusive_customer_tag_nav_collection
+  assign configured_tag = section.settings.exclusive_customer_tag_nav_tag | strip | downcase
+  assign exclusive_title = section.settings.exclusive_customer_tag_nav_title | strip
+
+  if section.settings.exclusive_customer_tag_nav_enabled and customer and exclusive_collection != blank and configured_tag != blank and exclusive_title != blank
+    for customer_tag in customer.tags
+      assign normalized_customer_tag = customer_tag | strip | downcase
+      if normalized_customer_tag == configured_tag
+        assign exclusive_nav_show = true
+      endif
+    endfor
+  endif
+
+  assign exclusive_is_current = false
+  if exclusive_nav_show and request.path == exclusive_collection.url
+    assign exclusive_is_current = true
+  endif
+-%}
+
+{%- if exclusive_nav_show -%}
+  {%- if layout == 'drawer' -%}
+    <li>
+      <a
+        id="HeaderDrawer-exclusive-customer-tag-collection"
+        href="{{ exclusive_collection.url }}"
+        class="menu-drawer__menu-item list-menu__item link link--text focus-inset{% if exclusive_is_current %} menu-drawer__menu-item--active{% endif %}"
+        {% if exclusive_is_current %}
+          aria-current="page"
+        {% endif %}
+      >
+        {{- exclusive_title | escape -}}
+      </a>
+    </li>
+  {%- else -%}
+    <li>
+      <a
+        id="HeaderMenu-exclusive-customer-tag-collection"
+        href="{{ exclusive_collection.url }}"
+        class="header__menu-item list-menu__item link link--text focus-inset"
+        {% if exclusive_is_current %}
+          aria-current="page"
+        {% endif %}
+      >
+        <span
+          {% if exclusive_is_current %}
+            class="header__active-menu-item"
+          {% endif %}
+        >
+          {{- exclusive_title | escape -}}
+        </span>
+      </a>
+    </li>
+  {%- endif -%}
+{%- endif -%}

@@ -99,5 +99,7 @@
         {%- endif -%}
       </li>
     {%- endfor -%}
+    {% comment %} Feature: Exclusive Collection Menu Item by Customer Tag — conditional append after main menu links {% endcomment %}
+    {%- render 'header-customer-tag-exclusive-nav-item', layout: 'inline' -%}
   </ul>
 </nav>

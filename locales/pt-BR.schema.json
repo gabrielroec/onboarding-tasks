@@ -1000,6 +1000,27 @@
           "label": "Avatar de conta de cliente",
           "info": "Visível apenas quando os clientes fizerem login com o Shop. [Gerenciar contas de cliente](/admin/settings/customer_accounts)"
         },
+        "header_customer_tag_exclusive": {
+          "content": "Navegação exclusiva (tag de cliente)"
+        },
+        "exclusive_customer_tag_nav_paragraph": {
+          "content": "Mostra um link extra após o menu principal quando o cliente autenticado tiver a tag definida. O destino é a coleção escolhida. Renderizado só em Liquid (sem piscar no ecrã)."
+        },
+        "exclusive_customer_tag_nav_enabled": {
+          "label": "Ativar link de navegação exclusivo",
+          "info": "Se ativo e os campos obrigatórios estiverem preenchidos, o link é acrescentado apenas para clientes que coincidem com a tag."
+        },
+        "exclusive_customer_tag_nav_tag": {
+          "label": "Tag do cliente",
+          "info": "Deve coincidir com uma tag na ficha do cliente (sem distinção de maiúsculas/minúsculas; ignora espaços no início e no fim)."
+        },
+        "exclusive_customer_tag_nav_title": {
+          "label": "Texto do link no menu"
+        },
+        "exclusive_customer_tag_nav_collection": {
+          "label": "Coleção",
+          "info": "O link usa o URL desta coleção. Nada é mostrado se não houver coleção selecionada."
+        },
         "header__utilities": {
           "content": "Serviços públicos"
         }

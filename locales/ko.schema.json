@@ -1000,6 +1000,27 @@
           "label": "고객 계정 아바타",
           "info": "고객이 Shop에 로그인한 경우에만 표시됩니다. [고객 계정 관리하기](/admin/settings/customer_accounts)"
         },
+        "header_customer_tag_exclusive": {
+          "content": "Exclusive navigation (customer tag)"
+        },
+        "exclusive_customer_tag_nav_paragraph": {
+          "content": "Shows one extra link after your main menu when the signed-in customer has the tag you set. Destination is a collection you pick. Rendered in Liquid only (no flicker)."
+        },
+        "exclusive_customer_tag_nav_enabled": {
+          "label": "Enable exclusive navigation link",
+          "info": "When enabled and required fields are filled, a link is appended for matching customers only."
+        },
+        "exclusive_customer_tag_nav_tag": {
+          "label": "Customer tag",
+          "info": "Must match a tag on the customer record (case-insensitive; leading and trailing spaces ignored)."
+        },
+        "exclusive_customer_tag_nav_title": {
+          "label": "Link label in menu"
+        },
+        "exclusive_customer_tag_nav_collection": {
+          "label": "Collection",
+          "info": "The link uses this collection's URL. Nothing is shown if no collection is selected."
+        },
         "header__utilities": {
           "content": "유틸리티"
         }
